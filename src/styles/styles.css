@@ -1,0 +1,12 @@
+.main{
+    flex-grow: 1;
+    background-color: plum;
+    min-height: 80vh;
+}
+.header{
+    height: 10vh;
+}
+.footer{
+    background-color: purple;
+    height: 10vh;
+}
