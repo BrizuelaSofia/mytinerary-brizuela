@@ -6,7 +6,7 @@ function Main(){
      
     return(
     <div className='main'>
- <h1 >HOLA, SOY EL COMPONENTE MAIN</h1>
+ <h1 >HOLA, SOY EL COMPONENTE Main</h1>
 
     </div>
        
