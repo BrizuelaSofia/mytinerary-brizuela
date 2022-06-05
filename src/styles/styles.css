@@ -3,8 +3,9 @@
     background-color: plum;
     min-height: 80vh;
 }
-.header{
+.NavBar{
     height: 10vh;
+    background-color: antiquewhite;
 }
 .footer{
     background-color: purple;
