@@ -1,13 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
 .main{
     flex-grow: 1;
     background-color: plum;
     min-height: 80vh;
 }
+
+.imagenCiudades{
+    height: 100px
+    
+
+}
+
+
+.titulo{
+    font-family: 'Kaushan Script', cursive;
+}
+
 .NavBar{
     height: 10vh;
-    background-color: antiquewhite;
+    background-color: antiquewhite !important;
 }
+
+/*.MuiPaper-root{
+    background-color: violet !important;
+} color de toodo el navbar ver q clase tiene solo a city/home*/
+
+
 .footer{
     background-color: purple;
     height: 10vh;
 }
+
+
+
