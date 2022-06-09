@@ -5,12 +5,12 @@ import {Link as LinkRouterr} from 'react-router-dom';
 
 function CalltoAction() {
     return ( 
-        <> <LinkRouterr to={'/PagVacia'}>
-         <Button className="learn-more"> Get Started
-         </Button>
-        </LinkRouterr>
-       </>
+        <>  <LinkRouterr to={'/PagVacia'}>
+              <Button className="learn-more"> Get Started
+              </Button>
+            </LinkRouterr>
+        </>
        
     )
 }
-      export default CalltoAction 
+export default CalltoAction 

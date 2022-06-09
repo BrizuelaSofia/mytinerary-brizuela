@@ -1,65 +1,57 @@
 [
     
     {
-        "id": "5",
+        "id": "1",
         "ciudad": "New York",
-        "país": "France",
         "imagen": "https://static.ndmais.com.br/2021/11/gastronomia-dos-estados-unidos.jpg"
         
 
     },
     {
-        "id": "6",
+        "id": "2",
         "ciudad": "Estambul",
-        "país": "France",
         "imagen": "https://www.costacruceros.es/content/dam/costa/costa-magazine/articles-magazine/travel/istanbul_aug21/cover_m.jpg.image.694.390.low.jpg"
         
 
     },
     {
-        "id": "7",
+        "id": "3",
         "ciudad": "Atacama",
-        "país": "France",
         "imagen": "https://cdn1.intriper.com/wp-content/uploads/2020/06/17104815/atacama-1-1024x536.jpg"
         
 
     },
     {
-        "id": "8",
+        "id": "4",
         "ciudad": "San Francisco",
-        "país": "France",
         "imagen": "https://img.freepik.com/foto-gratis/puente-golden-gate-noche-san-francisco-estados-unidos_268835-413.jpg"
         
 
     },
     {
-        "id": "1",
+        "id": "5",
         "ciudad": "Paris",
-        "país": "France",
         "imagen": "https://www.wallpapertip.com/wmimgs/5-50893_paris-wallpapers-hd-desktop-wallpapers-high-definition-paris.jpg"
         
 
     },
     {
-        "id": "2",
+        "id": "6",
         "ciudad": "Viena",
-        "país": "France",
         "imagen":"https://static.neweuropetours.eu/wp-content/uploads/2021/12/st-stephens-cathedral-in-vienna-austria-1600x900.jpeg"
         
 
     },
     {
-        "id": "3",
+        "id": "7",
         "ciudad": "Venice",
-        "país": "France",
         "imagen":"https://media.istockphoto.com/photos/roman-colosseum-at-sunset-picture-id1280668174?b=1&k=6&m=1280668174&s=170667a&w=0&h=l3-WZ8aIo__-XAug5vGifpVn33Id0gtYyZi-ylbL1d8="
         
 
     },
     {
-        "id": "4",
+        "id": "8",
         "ciudad": "Rome",
-        "país": "France",
         "imagen": "https://w0.peakpx.com/wallpaper/77/885/HD-wallpaper-venice-italy-sunrise-sunset.jpg"
         
 
@@ -67,7 +59,6 @@
     {
         "id": "9",
         "ciudad": "Madrid",
-        "país": "France",
         "imagen": "https://all.accor.com/magazine/imagerie/aerial-view-and-skyline-7b0b.jpg"
         
 
@@ -75,7 +66,6 @@
     {
         "id": "10",
         "ciudad": "Bali",
-        "país": "France",
         "imagen": "https://www.swedishnomad.com/wp-content/images/2018/09/resa-till-bali.jpg"
         
 
@@ -83,7 +73,6 @@
     {
         "id": "11",
         "ciudad": "Marrakech",
-        "país": "France",
         "imagen": "https://en3dias.net/wp-content/uploads/2018/11/en-cuantos-dias-se-ve-marrakech.jpg"
         
 
@@ -91,7 +80,6 @@
     {
         "id": "12",
         "ciudad": "Agra",
-        "país": "France",
         "imagen": "https://i.pinimg.com/originals/a2/fc/2d/a2fc2dbf3ffb0fd0f69ab383b7708ea7.png"
         
 
