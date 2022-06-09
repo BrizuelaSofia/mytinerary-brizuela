@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/styles.css'
 import logo from '../images/myitinerarylogo.jpg'
 import usuario from '../images/loginUser.png'
-
+import {Link as LinkRouter} from 'react-router-dom' 
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -18,7 +18,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['Home', 'Cities'];
+const pages = [{ nombre:'Home', to:'/'}, {nombre:'Cities', to:'/PagVacia'}];
 const settings = ['Sign In', 'Sign Up'];
 
 const NavBar = () => {
@@ -41,7 +41,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor:"white"}}>
+    <AppBar position="static" sx={{backgroundColor:"white"}} className='appbar'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx= {{display: {xs:'none', md: 'flex'}, mr:1  }}>
@@ -82,10 +82,12 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none'},
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <LinkRouter key={index} to={page.to} onClick={handleCloseNavMenu}> 
+                <MenuItem  >
+                  <Typography textAlign="center">{page.nombre}</Typography>
                 </MenuItem>
+                </LinkRouter>
               ))}
             </Menu>
           </Box>
@@ -98,15 +100,21 @@ const NavBar = () => {
             
          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+            {pages.map((page,index) => (
+              <LinkRouter key={index} to={page.to}onClick={handleCloseNavMenu}>
+                <Button
+                
+                
                 sx={{ my: 2, color: 'black', display: 'block' }}
               >
-                {page}
+                {page.nombre}
               </Button>
+              </LinkRouter>
+              
             ))}
+          </Box>
+          <Box>
+            
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
