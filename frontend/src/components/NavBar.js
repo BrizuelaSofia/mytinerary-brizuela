@@ -11,7 +11,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
+import Container from "@mui/material/Container"; /*se declara entre corchetes el nombre del estado y con react
+useState lo vamos a usar y entre parentesis se le asigna el valor
+los props es la forma q tiene react de pasar parametros entre componentes desde padres a hijos.
+ */
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -19,15 +22,18 @@ import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
   { nombre: "Home", to: "/" },
-  { nombre: "Cities", to: "/PagVacia" },
+  { nombre: "Cities", to: "/Cities" },     //nombre del estado  en la constante  entre [] va el valor del estado inicial.
 ];
-const settings = ["Sign In", "Sign Up"];
+const settings = ["Sign In", "Sign Up"];   
+
 
 const NavBar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);   //nombre del estado  en la constante  entre [] va el valor del estado inicial.
+
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = (event) => {  //en esta función se crea el metodo  q abriría el menu y por me
+    //dio de una funcion flecha le digo q me retorne el proximo valor del estado en el momento en el q se dispare el Evento.
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
@@ -45,7 +51,7 @@ const NavBar = () => {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#c287a0;" }}
+      sx={{ backgroundColor: "#c287a0;" }}   
       className="appbar"
     >
       <Container maxWidth="xl">
@@ -119,7 +125,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="iconousuario" src={usuario} style={{ width: "58px", backgroundColor:'white' }}/>
+                <Avatar alt="iconousuario" src={usuario} style={{ width: "100%", backgroundColor:'white', borderRadius:'4rem' }}/>
               </IconButton>
             </Tooltip>
             <Menu

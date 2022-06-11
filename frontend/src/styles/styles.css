@@ -22,6 +22,8 @@
 
 
 
+
+
 .NavBar {
     height: 10vh;
     background-color: antiquewhite !important;
@@ -133,6 +135,8 @@ button.learn-more:active::before {
 
 a {
     text-decoration: none;
-
+    
 }
+
+
 

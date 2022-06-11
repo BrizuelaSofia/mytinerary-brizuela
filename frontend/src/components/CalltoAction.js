@@ -5,7 +5,7 @@ import {Link as LinkRouterr} from 'react-router-dom';
 
 function CalltoAction() {
     return ( 
-        <>  <LinkRouterr to={'/PagVacia'}>
+        <>  <LinkRouterr to={'/Cities'}>
               <Button className="learn-more"> Get Started
               </Button>
             </LinkRouterr>

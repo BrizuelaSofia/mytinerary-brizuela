@@ -17,11 +17,11 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const pages = [
   { nombre: "Home", to: "/" },
-  { nombre: "Cities", to: "/PagVacia" },
+  { nombre: "Cities", to: "/Cities" },
 ];
 
 const Footer = () => {
-  const [ setAnchorElNav] = React.useState(null); //nombre del estado   entre () va el valor del estado inicial.
+ //nombre del estado  en la constante  entre [] va el valor del estado inicial.
   
 
   const handleCloseNavMenu = () => {    //en esta funcion creamos nuestros metodos, en este caso componente funcional le digo q me devuelva mi estado con su valor    setAnchorElNav(null);
