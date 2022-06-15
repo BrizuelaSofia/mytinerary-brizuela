@@ -4,7 +4,6 @@
 .main {
     flex-grow: 1;
     min-height: 80vh;
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -17,6 +16,54 @@
 
 
 
+
+.tarjetas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:3rem;
+   
+   
+   
+    
+}
+.cadaCard{
+    margin: 3.5rem;
+  
+
+}
+
+.fondociudades{
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+    margin: 0;
+   
+    
+      
+}
+/*ALTURA PARA TODOS LOS MAIN*/
+.altura{
+    min-height: 80vh;
+}
+.fondodetalle{
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+}
+
+   
+.tarjetadetalle{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    
+}
 
 
 
@@ -38,6 +85,7 @@
 .footer {
     background-color: purple;
     height: 10vh;
+    margin-top: auto;
 }
 
 .footericons {
@@ -120,18 +168,19 @@ button.learn-more:active::before {
     transform: translate3d(0, 0, -1em);
 }
 
-.paginavacia {
+/*.paginaVacia {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     height: 84.6vh;
-    background-image: url(../images/enconstrucción.jpeg);
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
     background-repeat: no-repeat;
    background-position: center;
-   
+}*/
+
   
    
-}
+
 
 a {
     text-decoration: none;

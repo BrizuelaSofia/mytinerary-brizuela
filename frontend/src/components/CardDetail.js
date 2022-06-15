@@ -5,10 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 
+
  
 
 
 function CardDetail({ciudad}){
+ console.log(ciudad)
     return(
         <Card sx={{ maxWidth: 345  }} key={ciudad.id} >
         <CardMedia 

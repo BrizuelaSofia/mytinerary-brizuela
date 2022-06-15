@@ -12,28 +12,31 @@ import Typography from "@mui/material/Typography";
 function CardCiudades({ filtrado }) {
   return filtrado.map((cadaCiudad) => {
     return (
-      <Card sx={{ maxWidth: 345 }} key={cadaCiudad.id}>
-        <CardMedia 
-          component="img"
-          height="140"
-          image={cadaCiudad.imagen}
-          alt="Romantic-City"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {cadaCiudad.ciudad}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <LinkRouter key={cadaCiudad.id} to={`/City/${cadaCiudad.id}`}>
-            <Button size="small">Detail</Button>
-          </LinkRouter>
-        </CardActions>
-      </Card>
+      
+        <Card sx={{ width: 350, heigth:400 }} key={cadaCiudad._id} className="cadaCard">
+          <CardMedia
+            component="img"
+            
+            height="140"
+            image={cadaCiudad.imagenUrl}
+            alt="Romantic-City"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {cadaCiudad.nombreciudad}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <LinkRouter   key={cadaCiudad.id} to={`/City/${cadaCiudad.id}`}>
+              <Button size="small">Detail</Button>
+            </LinkRouter>
+          </CardActions>
+        </Card>
+   
     );
   });
 }

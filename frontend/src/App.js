@@ -6,9 +6,10 @@ import Footer from './components/Footer';
 import {Routes,Route} from 'react-router-dom';
 import Cities from './pages/Cities' 
 import Detail from './components/Detail'
+import ScrollToTop from "react-scroll-to-top";
 
 
-function App() {  //<componente/> <componente><componente/> (dos formas distintas de llamar a los componentes)
+function App() {
     return (
         <div className="App">
            <NavBar/>
@@ -17,7 +18,13 @@ function App() {  //<componente/> <componente><componente/> (dos formas distinta
                <Route path="/Cities" element={<Cities />} />
                <Route path= "/City/:id" element={<Detail/>} />
             </Routes>
+            <ScrollToTop
+            style={{backGroundColor:"pink"}}
+            smooth
+           
+            />
             <Footer></Footer>
+            
         </div>
     );
 }
