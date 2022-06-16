@@ -24,7 +24,7 @@ console.log(ciudades)
   });
   return (                                                                                                                                                                
     <div className="fondociudades altura" >
-      <div>
+      <div className="inputsearch">
         <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" />
       </div>
 

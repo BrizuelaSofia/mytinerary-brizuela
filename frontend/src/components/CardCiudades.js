@@ -13,7 +13,7 @@ function CardCiudades({ filtrado }) {
   return filtrado.map((cadaCiudad) => {
     return (
       
-        <Card sx={{ width: 350, heigth:400 }} key={cadaCiudad._id} className="cadaCard">
+        <Card sx={{ width: 350, }} key={cadaCiudad._id} className="cadaCard">
           <CardMedia
             component="img"
             
@@ -25,14 +25,10 @@ function CardCiudades({ filtrado }) {
             <Typography gutterBottom variant="h5" component="div">
               {cadaCiudad.nombreciudad}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
           </CardContent>
           <CardActions>
-            <LinkRouter   key={cadaCiudad.id} to={`/City/${cadaCiudad.id}`}>
-              <Button size="small">Detail</Button>
+            <LinkRouter   to={`/City/${cadaCiudad._id}`}>
+              <Button className="botondetail" size="small">Detail</Button>
             </LinkRouter>
           </CardActions>
         </Card>

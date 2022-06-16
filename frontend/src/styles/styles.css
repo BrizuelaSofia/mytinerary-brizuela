@@ -16,38 +16,50 @@
 
 
 
+.inputsearch{
+    padding: 1rem;
+    padding-top:3rem;
+}
+
 
 .tarjetas{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin:3rem;
-   
-   
-   
-    
+     margin:0rem 3rem;
+        
 }
+
+
+/*arriba y abajo es el primero e izquierda y derecha el de 3. orden: arriba derecha, abajo, izquierda*/
 .cadaCard{
-    margin: 3.5rem;
-  
-
+margin:3.5rem;
 }
 
-.fondociudades{
-    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+
+
+.MuiCardMedia-root{
+    padding: 1rem;
+    margin-top: 1rem;
+    height: 15rem;
+}
+.css-1t6e9jv-MuiCardActions-root{
+    display: flex;
+    justify-content: center !important;
+}
+
+
+
+/*ALTURA PARA TODOS LOS MAIN*/
+.altura{
+    min-height: 85vh;
+     background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     object-fit: cover;
     margin: 0;
-   
-    
-      
-}
-/*ALTURA PARA TODOS LOS MAIN*/
-.altura{
-    min-height: 80vh;
 }
 .fondodetalle{
     background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
@@ -59,10 +71,24 @@
 
    
 .tarjetadetalle{
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+   min-height: 85vh;
+   display: flex;
+   justify-content: center ; 
+   align-items: center;
+   background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+   object-fit: cover;
+}
+
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+     display: flex;
+     flex-direction: column;
     
+ 
+   
 }
 
 
@@ -71,22 +97,16 @@
 
 
 
-.NavBar {
-    height: 10vh;
-    background-color: antiquewhite !important;
 
-}
+
+
 
 /*.MuiPaper-root{
     background-color: violet !important;
 } color de toodo el navbar ver q clase tiene solo a city/home*/
 
 
-.footer {
-    background-color: purple;
-    height: 10vh;
-    margin-top: auto;
-}
+
 
 .footericons {
     background-color: #c287a0;;
@@ -186,6 +206,16 @@ a {
     text-decoration: none;
     
 }
+@media (max-width:545px){
+    .cadaCard{
+        width: 100px;
+        margin: 1rem;
+    }
+    .tarjetas{
+        margin:0
 
+    }
+
+}
 
 
