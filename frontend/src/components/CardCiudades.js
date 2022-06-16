@@ -28,7 +28,7 @@ function CardCiudades({ filtrado }) {
           </CardContent>
           <CardActions>
             <LinkRouter   to={`/City/${cadaCiudad._id}`}>
-              <Button className="botondetail" size="small">Detail</Button>
+              <Button size="small">Detail</Button>
             </LinkRouter>
           </CardActions>
         </Card>

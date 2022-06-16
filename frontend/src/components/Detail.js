@@ -18,39 +18,33 @@ export default function Detail() {
   useEffect(() => {
     axios
       .get("http://localhost:4000/api/cities/" + id)
-      .then((response) => setCiudad(response.data.response.city)); //el console log se hace al parametro para ubicar la ruta de la api.
+      .then((response) => setCiudad(response.data.response.city)); 
   }, []);
-  
-
+//el console log se hace al parametro para ubicar la ruta de la api.
   return (
-    
-    <div className='tarjetadetalle '> 
-    <Card sx={{ maxWidth: 345 }} key={ciudad._id} >
-      <CardMedia
-        component="img"
-        height="140"
-        image={ciudad.imagenUrl}
-        alt="Romantic-City"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {ciudad.nombreciudad}
-        </Typography>
-        <Typography>
-          {ciudad.nombrepais}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {ciudad.descripcion}
-        </Typography>
-        <CardActions>
-            <LinkRouter   key={ciudad.id} to={"/Cities"}>
+    <div className="tarjetadetalle ">
+      <Card sx={{ maxWidth: 345 }} key={ciudad._id}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={ciudad.imagenUrl}
+          alt="Romantic-City"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {ciudad.nombreciudad}
+          </Typography>
+          <Typography>{ciudad.nombrepais}</Typography>
+          <Typography variant="body2" color="text.secondary">
+            {ciudad.descripcion}
+          </Typography>
+          <CardActions>
+            <LinkRouter key={ciudad.id} to={"/Cities"}>
               <Button size="small">back</Button>
             </LinkRouter>
           </CardActions>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
     </div>
-   
-    
   );
 }

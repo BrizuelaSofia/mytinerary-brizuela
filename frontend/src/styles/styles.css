@@ -197,7 +197,68 @@ button.learn-more:active::before {
     background-repeat: no-repeat;
    background-position: center;
 }*/
+.input {
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #e8e8e8;
+    box-shadow: 6px 6px 12px #ffffff,
+                -6px -6px 12px #c5c5c5;
+    font-size: medium;
+    font-weight: bold;
+    max-width: 200px;
+   }
+   
+   .input:focus {
+    outline-color: white;
+    place-content: "Enter your message!";
+   }
 
+/* From uiverse.io by @Mike11jr */
+.btn {
+    padding: 0.9em 1.9em;
+    font-size: 16px;
+    border: none;
+    background: #6285f8;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+   }
+   
+   .btn:hover {
+    color: rgb(255, 255, 255);
+   }
+   
+   .btn::before,.btn::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.096);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    transition: all 0.4s;
+   }
+   
+   .btn::after {
+    z-index: -2;
+    transition: all 0.4s;
+   }
+   
+   .btn:hover::before {
+    background: rgb(0, 0, 0, 0.315);
+    border-radius: 10px;
+   }
+   
+   .btn:hover::after {
+    background: linear-gradient(to right, #cb6ce6, #38b6ff);
+    border-radius: 10px;
+    transform: scale(1.07, 1.2) rotateX(180deg);
+
+   }
   
    
 

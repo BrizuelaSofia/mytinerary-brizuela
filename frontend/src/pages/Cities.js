@@ -25,10 +25,10 @@ console.log(ciudades)
   return (                                                                                                                                                                
     <div className="fondociudades altura" >
       <div className="inputsearch">
-        <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" />
+        <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" name="text" className="input" placeholder="Type here!"  />
       </div>
 
-     <div className="tarjetas">{filtroCiudades.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> )}</div> 
+     <div className="tarjetas"> {filtroCiudades.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
     </div>
   );
 }
