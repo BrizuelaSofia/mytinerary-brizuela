@@ -1,0 +1,77 @@
+AXIOS:
+es una libreria q a modo de cliente nos permite hacer peticiones HTTP, en este caso 
+
+SERVIDOR:
+es una computadora q almacena y distribuye datos
+
+MONGOOSE:
+mongoose: libreria q sirve para conectarme y trabajar con mongo.
+
+
+VARIABLE DE ENTORNO: 
+son valores q contienen informacion del programa, y en nuestro caso es el cluster, q lo guardamos 
+en mongouri
+
+MONGO
+base de datos no relacional, almacena datos en documentos flexibles similares al json.
+
+
+MONGOOSE:
+ lo uso para conectar nuestro servidor a la base de datos de mongo.
+
+
+MIDDLEWARE
+es software que se sitúa entre un sistema operativo y las aplicaciones que se ejecutan en él.
+permitir la comunicación y la administración de datos en aplicaciones distribuidas
+
+
+EXPRESS
+libreria con la capacidad de crear appis de manera rapida y sencilla
+ayuda al funcionamiento de node, LO FACILITA.
+
+CONTROLADOR
+ contiene la logica ue actualiza el modelo.  
+se encarga de gestionar las instrucciones que se reciben, atenderlas y procesarlas
+son el cerebro de nuestro backend
+se encarga de las funciones logicas
+
+MODEL
+define que datos va a tener la coleccion de la base de datos
+ El modelo define qué datos debe contener la coleccion o los esquemas que vamos a utilizar
+
+RUTAS
+puente entre nuestro back y front que trabaja a traves de los endpoints
+ enlace backend y front a traves de los endpoint de la app.
+
+AXIOS
+libreria de js que puede ejecutarse en el navegador permite configurar y realizar solicitudes 
+a un servidor y recibir reespuestas
+
+SERVIDOR:
+servidor es una computadora q almacena y distribuye datos.
+
+POSTMAN:
+herramienta q permite hacer peticiones sobre apis
+
+UneEFFECT
+HOOKS que permite ejecutar codigo cada vez que nuestro un componente se renderice
+//pq el use effect se utiliza para inicializar la api y usamos axios para obtener la api entonces en el segundo parametro donde se coloca el estado q queremos actualizar, no ponemos nada pq ese cambio es la pagina.
+
+UseState
+guarda el valor inicial de una variable y la actualiza
+ es un hook y ademas una fx que nos permite guardar el estado de de un componente, acepta un valor inicial para una variable, devuelve un array con 2 elementos, el valor de la variable y el fx para modificarla. 
+
+UsePARAMS
+un hook para organizar rutas dinamicas con un id unico.
+hooks de ract DOM que sirve para psar parametros de maneras dinamicas.
+
+useUnifiedTopology
+drives de MONGODB nuevos que viene por defecto como false y uno lo quiere usar lo debe indicar como "true"
+
+useNewUrlParser
+si se encuentra un bug, permite volver a la version anterior.*/
+
+
+
+
+

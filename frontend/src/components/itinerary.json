@@ -1,0 +1,102 @@
+{
+    "data": {
+        {
+            "nombreitinerario": "New York, City of Dreams",
+            "personaitinerario": "https://awsimages.detik.net.id/community/media/visual/2021/07/16/john-mayer.jpeg?w=700&q=90",
+            "nombrepersona": "John Mayer",
+            "precio": "5 billetes",
+            "duracion": "6hrs",
+            "etiquetas": "#concert  #NYC  #missliberty ",
+            "likes": "0",
+            "actividades": 
+            [
+                {
+                    "atracciones": "Statue of Liberty",
+                    "imagen": "https://www.elconfidencial.com/viajes/2022-02-12/estatua-libertad-nueva-york_3371750/",
+                    "descripcion": "Visit the Statue of Liberty Museum. Join us for an inmmersive experience through the museum on Liberty island."
+                },
+                {
+                    "atracciones": "Show Concert: Sob Rock",
+                    "imagen":"https://www.gq.com/story/john-mayer-big-pants-sob-rock-tour",
+                    "descripcion": "Come see me in concert at the Empire States Building, I'll be presenting my new album Sob Rock. I'll wait for you!"
+                }
+            ]
+        },
+        {
+            "nombreitinerario":"Tour for lovers",
+             "personaitinerario": "",
+             "nombrepersona": "Dua Lipa",
+             "precio": "3 billetes",
+             "duracion": "4hrs",
+             "etiquetas": "#love #eiffelTower #couple",
+             "likes": "0",
+             "actividades": [
+                {
+                    "atracciones": "Romantic carriage ride",
+                    "imagen": "",
+                    "descripcion": ""
+
+                },
+                {
+                    "atracciones": "Romantic cruise: old Paris",
+                    "imagen": "",
+                    "descripcion": ""
+
+                }
+                
+             ]
+        },
+        {
+            "nombreitinerario": "A step through history",
+            "personaitinerario": "",
+            "nombrepersona": "Goyo Degano",
+            "precio": "5 billetes",
+            "duracion": "8hrs",
+            "etiquetas": "#baroque #opera #history #cultural ",
+            "likes": "0",
+            "actividades":  
+            [
+                {
+                    "atracciones": "Historic Center of Vienna",
+                    "imagen": "",
+                    "descripcion": ""
+
+                },
+                {
+                    "atracciones": "oper",
+                    "imagen": "",
+                    "descripcion": ""
+
+                }
+                
+            ]
+        },
+        {
+            "nombreitinerario": "Beautiful Squares"
+            "personaitinerario": "Appa"
+            "precio": "2 billetes"
+            "duracion": "2hs"
+            "etiquetas": "#sunset #walk #fountainOfWishes"
+            "likes": "0"
+            "actividades":
+            [
+                {
+                    "atracciones": "Fontana Di Trevi ride",
+                    "imagen": "",
+                    "descripcion": ""
+
+                },
+                {
+                    "atracciones": "Piazza Capidoglio ride",
+                    "imagen": "",
+                    "descripcion": ""
+
+                }
+                
+            ]
+        },
+        
+
+        
+    }
+}
