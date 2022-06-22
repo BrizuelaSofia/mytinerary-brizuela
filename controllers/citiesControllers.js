@@ -1,4 +1,4 @@
-//const City = require("../models/cities"); //importamos nuestro modelo de cities.
+const City = require("../models/cities"); //importamos nuestro modelo de cities.
 
 const citiesControllers = {
   addCities: async (req, res) => {

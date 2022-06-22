@@ -7,9 +7,14 @@ import {Routes,Route} from 'react-router-dom';
 import Cities from './pages/Cities' 
 import Detail from './components/Detail'
 import ScrollToTop from "react-scroll-to-top";
+import {useEffect} from "react"
+import { connect } from 'react-redux';
+import citiesActions from "./redux/actions/citiesActions"
 
-
-function App() {
+function App(props) {
+    useEffect(() => {
+        props.getCities()
+      }, [])
     return (
         <div className="App">
            <NavBar/>
@@ -28,6 +33,10 @@ function App() {
         </div>
     );
 }
+const mapDispatchToProps={
+    getCities: citiesActions.getCities,
+  
+  }
 
-export default App;
-// con el :id le indicamos q le vamos a pasar un parametro.
+  export default connect(null,mapDispatchToProps)(App)
+

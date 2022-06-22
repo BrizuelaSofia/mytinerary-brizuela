@@ -22,7 +22,7 @@ function CardCiudades({ filtrado }) {
             alt="Romantic-City"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5"component="div">
               {cadaCiudad.nombreciudad}
             </Typography>
           </CardContent>

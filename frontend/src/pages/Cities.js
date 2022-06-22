@@ -1,25 +1,19 @@
 import "../styles/styles.css";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Respuesta from "../components/Respuesta";
 import CardCiudades from "../components/CardCiudades";
+import {connect} from "react-redux"
 //darle la misma clase.
 //pexels 
-import axios from 'axios'
 
 
-function Cities() {
+
+function Cities(props) {
   const [inputValue, setInputValue] = useState("");
-  const [ciudades, setCiudades] = useState([])
 
-  useEffect(() => {
-    axios.get("http://localhost:4000/api/cities")
-    .then((data)=> setCiudades(data.data.response.cities))
-  }, [])
-console.log(ciudades)
-
-  console.log(inputValue);
-
- const filtroCiudades = ciudades.filter((cadaCiudad) => {
+console.log(props)
+ const filtroCiudades = props.cities?.filter((cadaCiudad) => {
+  
     return cadaCiudad.nombreciudad.toLowerCase().startsWith(inputValue.toLowerCase().trim());
   });
   return (                                                                                                                                                                
@@ -28,12 +22,19 @@ console.log(ciudades)
         <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" name="text" className="input" placeholder="Type here!"  />
       </div>
 
-     <div className="tarjetas"> {filtroCiudades.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
+     <div className="tarjetas"> { filtroCiudades?.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
     </div>
   );
 }
+const mapStateToProps = (state) =>{
+return{
+    cities:state.citiesReducers.cities
+}
 
-export default Cities;
+  //auxiliar:state.citiesReducers.auxiliar
+}
+
+export default connect(mapStateToProps, null)(Cities)
 
 
 
