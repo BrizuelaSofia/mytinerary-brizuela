@@ -1,33 +1,35 @@
-//const Itinerary = require("../models/itinerary"); //importamos nuestro modelo de cities.
+const Itinerary = require("../models/itinerary"); //importamos nuestro modelo de cities.
 
 const itinerariesControllers = {
   addItinerary: async (req, res) => {
     const {
-      nombreitinerario,
-      personaitinerario,
+      autoritinerario,
+      autorimagen,
       precio,
       duracion,
       etiquetas,
       likes,
-      actividades,
+      cityid
+     
     } = req.body.data;
     let itinerary;
     let error = null;
     try {
       itinerary = await new Itinerary({
-        nombreitinerario: nombreitinerario,
-        personaitinerario: personaitinerario,
+        autoritinerario: autoritinerario,
+        autorimagen: autorimagen,
         precio: precio,
         duracion: duracion,
         etiquetas: etiquetas,
         likes: likes,
-        actividades: actividades,
+        cityid: cityid
+      
       }).save();
     } catch (err) {
       error = err;
     }
     res.json({
-      response: error ? "ERROR" : city,
+      response: error ? "ERROR" : itinerary,
       success: error ? false : true,
       error: error,
     });
@@ -38,13 +40,13 @@ const itinerariesControllers = {
     let itineraries;
     let error = null;
     try {
-      itineraries = await Itinerary.find();
+      itineraries = await Itinerary.find().populate("cityid")
       console.log(Itinerary);
     } catch (err) {
       error = err;
     }
     res.json({
-      response: error ? "ERROR" : { cities },
+      response: error ? "ERROR" : { itineraries },
       success: error ? false : true,
       error: error,
     });
@@ -102,6 +104,22 @@ const itinerariesControllers = {
       error: error,
     });
   },
-};
+  readItineraries: async (req,res)=>{
+    const id= req.params.id
+    let itineraries
+    let error= null
+    try{
+        itineraries= await Itinerary.find({cityid:id})
+        .populate("cityid")
+    }catch (err) {
+        error = err
+    }
+    res.json({
+        response: error ? 'ERROR' : itineraries,
+        success: error ? false : true,
+        error: error
+})
+}
+}
 
 module.exports = itinerariesControllers;

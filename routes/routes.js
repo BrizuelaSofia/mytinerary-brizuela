@@ -3,6 +3,7 @@ const Router = require("express").Router(); //requerimos express q tiene un meto
 //(enlace entre backend y frontend)
 const citiesControllers = require("../controllers/citiesControllers");
 
+
 const { getCities, addCities, removeCity, modifyCity, getOneCity } =
   citiesControllers;
 //desestructuro los controladores, para trabajarlos individualmente.
@@ -18,6 +19,18 @@ Router.route("/cities/:id").delete(removeCity).put(modifyCity).get(getOneCity);/
 //metodo q va a aplicar a la ruta para asignarle el controlador delete/modify/getonecity,
 // LA CUAL REQUIERE COMO PARAMETRO ID,
 //y en el caso de modify el body y el id.
+const itinerariesControllers = require("../controllers/itinerariesControllers");
+
+const { getItineraries, addItinerary, removeItinerary, modifyItinerary, getOneItinerary, readItineraries } = itinerariesControllers;
+
+Router.route("/itineraries").get(getItineraries).post(addItinerary);
+
+Router.route("/itineraries/:id")
+  .delete(removeItinerary)
+  .put(modifyItinerary)
+  .get(getOneItinerary);
+
+Router.route("/itineraries/city/:id").get(readItineraries)
 
 
 

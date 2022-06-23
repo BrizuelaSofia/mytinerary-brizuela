@@ -1,8 +1,8 @@
 {
     "data": {
         {
-            "nombreitinerario": "New York, City of Dreams",
-            "personaitinerario": "https://awsimages.detik.net.id/community/media/visual/2021/07/16/john-mayer.jpeg?w=700&q=90",
+            "autoritinerario": "New York, City of Dreams",
+            "autorimagen": "https://awsimages.detik.net.id/community/media/visual/2021/07/16/john-mayer.jpeg?w=700&q=90",
             "nombrepersona": "John Mayer",
             "precio": "5 billetes",
             "duracion": "6hrs",
@@ -72,12 +72,12 @@
             ]
         },
         {
-            "nombreitinerario": "Beautiful Squares"
-            "personaitinerario": "Appa"
-            "precio": "2 billetes"
-            "duracion": "2hs"
-            "etiquetas": "#sunset #walk #fountainOfWishes"
-            "likes": "0"
+            "nombreitinerario": "Beautiful Squares",
+            "personaitinerario": "Appa",
+            "precio": "💵💵",
+            "duracion": "2hs",
+            "etiquetas": "#sunset #walk #fountainOfWishes",
+            "likes": "0",
             "actividades":
             [
                 {

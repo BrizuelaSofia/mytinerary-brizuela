@@ -8,12 +8,14 @@ import Cities from './pages/Cities'
 import Detail from './components/Detail'
 import ScrollToTop from "react-scroll-to-top";
 import {useEffect} from "react"
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import citiesActions from "./redux/actions/citiesActions"
 
-function App(props) {
+
+function App() {
+    const dispatch = useDispatch();
     useEffect(() => {
-        props.getCities()
+        dispatch(citiesActions.getCities())
       }, [])
     return (
         <div className="App">
@@ -33,10 +35,7 @@ function App(props) {
         </div>
     );
 }
-const mapDispatchToProps={
-    getCities: citiesActions.getCities,
-  
-  }
 
-  export default connect(null,mapDispatchToProps)(App)
+
+  export default App
 

@@ -1,8 +1,9 @@
 import "../styles/styles.css";
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import Respuesta from "../components/Respuesta";
 import CardCiudades from "../components/CardCiudades";
-import {connect} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
+import citiesActions from "../redux/actions/citiesActions"
 //darle la misma clase.
 //pexels 
 
@@ -10,12 +11,14 @@ import {connect} from "react-redux"
 
 function Cities(props) {
   const [inputValue, setInputValue] = useState("");
+  const dispatch= useDispatch()
 
-console.log(props)
- const filtroCiudades = props.cities?.filter((cadaCiudad) => {
-  
-    return cadaCiudad.nombreciudad.toLowerCase().startsWith(inputValue.toLowerCase().trim());
-  });
+  useEffect(() => {
+    dispatch(citiesActions.filterCities(inputValue))
+  },[inputValue])
+
+  const filtroCiudades = useSelector(store => store.citiesReducers.filter)
+ 
   return (                                                                                                                                                                
     <div className="fondociudades altura" >
       <div className="inputsearch">
@@ -26,15 +29,11 @@ console.log(props)
     </div>
   );
 }
-const mapStateToProps = (state) =>{
-return{
-    cities:state.citiesReducers.cities
-}
 
   //auxiliar:state.citiesReducers.auxiliar
-}
 
-export default connect(mapStateToProps, null)(Cities)
+
+export default Cities
 
 
 
