@@ -15,7 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-const ExpandMore = styled((props) => { 
+const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
@@ -26,8 +26,8 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function Itinerary({itineraries}) {
- 
+export default function Itinerary({ itineraries }) {
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -36,75 +36,65 @@ export default function Itinerary({itineraries}) {
 
   return (
     <>
-    {itineraries.map(itinerary => {
-    return (
-      <div className="">
-        <Card sx={{ maxWidth: 500 }} >
-          <h1 className='textItinerary'>{itinerary.nombreitinerario}</h1>
-      <CardHeader
-      
-        avatar={
-          <Avatar src = {itinerary.autorimagen} />
-          
-          
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        
-        title= {itinerary.autoritinerario}
-        
-      />
-       <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      /> 
-      <CardContent>
-        <Typography variant="body2" color="text.secondary" className='formatoItinerary'>
-          <h5>{itinerary.precio}</h5>
-          <h5 className=''>{itinerary.duracion}</h5>
-          <h5>{itinerary.etiquetas}</h5>
-         {itinerary.likes}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon  />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
 
-         
-          <Typography>
-           coming soon 
-          </Typography>
-         
-        </CardContent>
-      </Collapse>
-    </Card>
-      </div>
-      
-    )
-    
+      {itineraries.map(itinerary => {
+        return (
+          <div className="fondo">
+            <Card className="card-itinerary" sx={{ width: 400, m: 1, }} >
+              <h1 className='textItinerary'>{itinerary.nombreitinerario}</h1>
+              <CardHeader
+
+                avatar={
+                  <Avatar className='avatar' src={itinerary.autorimagen} />
+                }
+                action={
+                  <IconButton aria-label="settings">
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+
+                title={itinerary.autoritinerario}
+
+              />
+
+              <CardContent>
+                <Typography variant="body2" color="text.secondary" className='formatoItinerary'>
+                  <h5>{itinerary.precio}</h5>
+                  <h5 className=''>{itinerary.duracion}</h5>
+                  <h5>{itinerary.etiquetas}</h5>
+                </Typography>
+              </CardContent>
+              <CardActions disableSpacing>
+                <IconButton aria-label="add to favorites">
+                  <FavoriteIcon sx={{ color: 'red' }} />
+                </IconButton>
+                <ExpandMore
+                  expand={expanded}
+                  onClick={handleExpandClick}
+                  aria-expanded={expanded}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </ExpandMore>
+              </CardActions>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+
+
+                  <Typography>
+                    Coming Soon 🛠
+                  </Typography>
+
+                </CardContent>
+              </Collapse>
+            </Card>
+          </div>
+
+        )
+
       })}
-  </>
+    </>
 
-  
+
   );
 }

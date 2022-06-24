@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 //import { Link as LinkRouter } from "react-router-dom";
 import { useEffect } from "react";
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import itinerariesActions from '../redux/actions/itinerariesActions'
 import * as React from 'react';
@@ -14,7 +14,7 @@ export default function Detail() {
   const { id } = useParams()
   const dispatch = useDispatch();
 
-  
+
 
 
   useEffect(() => {
@@ -22,14 +22,14 @@ export default function Detail() {
   }, [id]);
 
   const itineraries = useSelector((store) => store.itinerariesReducers.itineraries)
-//el console log se hace al parametro para ubicar la ruta de la api.
+  //el console log se hace al parametro para ubicar la ruta de la api.
 
   return (
     <>
-    { itineraries.length > 0 ? <Itinerary itineraries={itineraries}/> : <p>no itineraries</p> }
-        
-      </>
-    
+      {itineraries.length > 0 ? <Itinerary className="card-itinerary" itineraries={itineraries} /> : <p>no itineraries</p>}
+
+    </>
+
   );
 }
 

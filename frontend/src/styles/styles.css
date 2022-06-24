@@ -16,35 +16,36 @@
 
 
 
-.inputsearch{
+.inputsearch {
     padding: 1rem;
-    padding-top:3rem;
+    padding-top: 3rem;
 }
 
 
-.tarjetas{
+.tarjetas {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-     margin:0rem 3rem;
-        
+    margin: 0rem 3rem;
+
 }
 
 
 /*arriba y abajo es el primero e izquierda y derecha el de 3. orden: arriba derecha, abajo, izquierda*/
-.cadaCard{
-margin:3.5rem;
+.cadaCard {
+    margin: 3.5rem;
 }
 
 
 
-.MuiCardMedia-root{
+.MuiCardMedia-root {
     padding: 1rem;
     margin-top: 1rem;
     height: 15rem;
 }
-.css-1t6e9jv-MuiCardActions-root{
+
+.css-1t6e9jv-MuiCardActions-root {
     display: flex;
     justify-content: center !important;
 }
@@ -52,16 +53,17 @@ margin:3.5rem;
 
 
 /*ALTURA PARA TODOS LOS MAIN*/
-.altura{
+.altura {
     min-height: 85vh;
-     background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     object-fit: cover;
     margin: 0;
 }
-.fondodetalle{
+
+.fondodetalle {
     background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,26 +71,26 @@ margin:3.5rem;
     object-fit: cover;
 }
 
-   
-.tarjetadetalle{
-   min-height: 85vh;
-   display: flex;
-   justify-content: center ; 
-   align-items: center;
-   background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center center;
-   object-fit: cover;
+
+.tarjetadetalle {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
 }
 
 
 .css-1ri6ub7-MuiPaper-root-MuiCard-root {
-     display: flex;
-     flex-direction: column;
-    
- 
-   
+    display: flex;
+    flex-direction: column;
+
+
+
 }
 
 
@@ -109,7 +111,8 @@ margin:3.5rem;
 
 
 .footericons {
-    background-color: #c287a0;;
+    background-color: #c287a0;
+    ;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -203,16 +206,16 @@ button.learn-more:active::before {
     padding: 15px;
     background-color: #e8e8e8;
     box-shadow: 6px 6px 12px #ffffff,
-                -6px -6px 12px #c5c5c5;
+        -6px -6px 12px #c5c5c5;
     font-size: medium;
     font-weight: bold;
     max-width: 200px;
-   }
-   
-   .input:focus {
+}
+
+.input:focus {
     outline-color: white;
     place-content: "Enter your message!";
-   }
+}
 
 /* From uiverse.io by @Mike11jr */
 .btn {
@@ -224,13 +227,14 @@ button.learn-more:active::before {
     cursor: pointer;
     position: relative;
     z-index: 1;
-   }
-   
-   .btn:hover {
+}
+
+.btn:hover {
     color: rgb(255, 255, 255);
-   }
-   
-   .btn::before,.btn::after {
+}
+
+.btn::before,
+.btn::after {
     content: "";
     position: absolute;
     top: 0%;
@@ -241,42 +245,57 @@ button.learn-more:active::before {
     backdrop-filter: blur(10px);
     z-index: -1;
     transition: all 0.4s;
-   }
-   
-   .btn::after {
+}
+
+.btn::after {
     z-index: -2;
     transition: all 0.4s;
-   }
-   
-   .btn:hover::before {
+}
+
+.btn:hover::before {
     background: rgb(0, 0, 0, 0.315);
     border-radius: 10px;
-   }
-   
-   .btn:hover::after {
+}
+
+.btn:hover::after {
     background: linear-gradient(to right, #cb6ce6, #38b6ff);
     border-radius: 10px;
     transform: scale(1.07, 1.2) rotateX(180deg);
 
-   }
-  
-   
+}
+
+
 
 
 a {
     text-decoration: none;
-    
+
 }
-@media (max-width:545px){
-    .cadaCard{
+
+@media (max-width:545px) {
+    .cadaCard {
         width: 100px;
         margin: 1rem;
     }
-    .tarjetas{
-        margin:0
 
+    .tarjetas {
+        margin: 0
     }
 
 }
 
+.fondo {
+    display: flex;
+    justify-content: center;
+    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
 
+}
+
+.card-itinerary {
+    border-radius: 1px 1px 1px 4px black !important;
+
+}

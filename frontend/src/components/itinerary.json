@@ -8,8 +8,7 @@
             "duracion": "6hrs",
             "etiquetas": "#dreams  #NYC  #missliberty ",
             "likes": "💕0",
-            "actividades": 
-            [
+            "actividades": [
                 {
                     "atracciones": "Statue of Liberty",
                     "imagen": "https://www.elconfidencial.com/viajes/2022-02-12/estatua-libertad-nueva-york_3371750/",
@@ -17,12 +16,11 @@
                 },
                 {
                     "atracciones": "Show Concert: Sob Rock",
-                    "imagen":"https://www.gq.com/story/john-mayer-big-pants-sob-rock-tour",
+                    "imagen": "https://www.gq.com/story/john-mayer-big-pants-sob-rock-tour",
                     "descripcion": "Come see me in concert at the Empire States Building, I'll be presenting my new album Sob Rock. I'll wait for you!"
                 }
             ]
         },
-        
         "nombreitinerario": "New York: Show Concerts",
         "autorimagen": "https://es.web.img3.acsta.net/pictures/18/01/23/15/36/0550263.jpg",
         "autoritinerario": "Timothée Chalamet",
@@ -30,8 +28,7 @@
         "duracion": "6hrs",
         "etiquetas": "#concert  #NYC #DuaLipa #JohnMayer ",
         "likes": "💕0",
-        "actividades": 
-        [
+        "actividades": [
             {
                 "atracciones": "Statue of Liberty",
                 "imagen": "https://www.elconfidencial.com/viajes/2022-02-12/estatua-libertad-nueva-york_3371750/",
@@ -39,188 +36,157 @@
             },
             {
                 "atracciones": "Show Concert: Sob Rock",
-                "imagen":"https://www.gq.com/story/john-mayer-big-pants-sob-rock-tour",
+                "imagen": "https://www.gq.com/story/john-mayer-big-pants-sob-rock-tour",
                 "descripcion": "Come see me in concert at the Empire States Building, I'll be presenting my new album Sob Rock. I'll wait for you!"
             }
         ]
-        },
-        {
-            "nombreitinerario":"Tour for lovers",
-             "autorimagen": "https://i.pinimg.com/736x/24/3e/ff/243eff24b3e088ae46fa2edd6cc78dc1.jpg",
-             "autoritinerario": "Dua Lipa",
-             "precio": "💵💵💵💵💵",
-             "duracion": "4hrs",
-             "etiquetas": "#love #eiffelTower #couple",
-             "likes": "💕0",
-             "actividades": [
-                {
-                    "atracciones": "Romantic carriage ride",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "Romantic cruise: old Paris",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-             ]
-        },
-        {
-            "nombreitinerario":"Family Plan",
-             "autorimagen": "https://www.sedal.com.ar/content/dam/unilever/sunsilk/global/general_image/banner_internozoe_sirius_2048x565-1842702-jpg.jpg.ulenscale.320x290.jpg",
-             "autoritinerario": "Zoe Gotusso",
-             "precio": "💵💵💵💵💵",
-             "duracion": "4hrs",
-             "etiquetas": "#disney #family #tour #funny",
-             "likes": "💕0",
-             "actividades": [
-                {
-                    "atracciones": "Disneyland Paris",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "Bus tour paris",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-             ]
-        },
-        {
-            "nombreitinerario": "A step through history",
-            "autorimagen": "https://vivo.perfil.com/storage/uploads/news/thumbnail/6f28433cf643773bacef6ce768cc3d86.jpg",
-            "autoritinerario": "Goyo Degano",
-            "precio": "💵💵💵💵💵",
-            "duracion": "8hrs",
-            "etiquetas": "#baroque #opera #history #cultural ",
-            "likes": "0",
-            "actividades":  
-            [
-                {
-                    "atracciones": "Historic Center of Vienna",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "oper",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-            ]
-        },
-        {
-            "nombreitinerario": "Beautiful Squares",
-            "autorimagen": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/appa-avatar.jpg?fit=1280%2C720&quality=80&ssl=1",
-            "autoritinerario": "Appa",
-            "precio": "💵💵",
-            "duracion": "2hs",
-            "etiquetas": "#sunset #walk #fountainOfWishes",
-            "likes": "0",
-            "actividades":
-            [
-                {
-                    "atracciones": "Fontana Di Trevi ride",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "Piazza Capidoglio ride",
-                    "imagen": "",
-                    "descripcion": "romaroma"
-
-                }
-                
-            ]
-        },
-        {
-            "nombreitinerario": "The canal of love",
-            "autorimagen": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/appa-avatar.jpg?fit=1280%2C720&quality=80&ssl=1",
-            "autoritinerario": "Appa",
-            "precio": "💵💵💵💵",
-            "duracion": "5hs",
-            "etiquetas": "#lovers #floatingcity #date",
-            "likes": "0",
-            "actividades":
-            [
-                {
-                    "atracciones": "paseo en bote",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "restaurante",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-            ]
-        },
-        {
-            "nombreitinerario": "Walking around Madrid",
-            "autorimagen": "https://media.revistavanityfair.es/photos/60e82bd2af2c957f3efefd50/master/w_1600%2Cc_limit/246523.jpg",
-            "autoritinerario": "Tom Cruise",
-            "precio": "💵💵",
-            "duracion": "7hs",
-            "etiquetas": "#sunnyday #ride #tour",
-            "likes": "💕0"
-            "actividades":
-            [
-                {
-                    "atracciones": "paseo en bicicleta",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "restaurante",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-            ]
-        },
-        
-        {
-            "nombreitinerario": "The canal of love",
-            "autorimagen": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/appa-avatar.jpg?fit=1280%2C720&quality=80&ssl=1",
-            "autoritinerario": "Appa",
-            "precio": "💵💵💵💵",
-            "duracion": "5hs",
-            "etiquetas": "#lovers #floatingcity #date",
-            "likes": "0",
-            "actividades":
-            [
-                {
-                    "atracciones": "paseo en bote",
-                    "imagen": "",
-                    "descripcion": ""
-
-                },
-                {
-                    "atracciones": "restaurante",
-                    "imagen": "",
-                    "descripcion": ""
-
-                }
-                
-            ]
-        },
-        
-        
-
-        
-    }
+    },
+    {
+        "nombreitinerario": "Tour for lovers",
+        "autorimagen": "https://i.pinimg.com/736x/24/3e/ff/243eff24b3e088ae46fa2edd6cc78dc1.jpg",
+        "autoritinerario": "Dua Lipa",
+        "precio": "💵💵💵💵💵",
+        "duracion": "4hrs",
+        "etiquetas": "#love #eiffelTower #couple",
+        "likes": "💕0",
+        "actividades": [
+            {
+                "atracciones": "Romantic carriage ride",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "Romantic cruise: old Paris",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "Family Plan",
+        "autorimagen": "https://www.sedal.com.ar/content/dam/unilever/sunsilk/global/general_image/banner_internozoe_sirius_2048x565-1842702-jpg.jpg.ulenscale.320x290.jpg",
+        "autoritinerario": "Zoe Gotusso",
+        "precio": "💵💵💵💵💵",
+        "duracion": "4hrs",
+        "etiquetas": "#disney #family #tour #funny",
+        "likes": "💕0",
+        "actividades": [
+            {
+                "atracciones": "Disneyland Paris",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "Bus tour paris",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "A step through history",
+        "autorimagen": "https://vivo.perfil.com/storage/uploads/news/thumbnail/6f28433cf643773bacef6ce768cc3d86.jpg",
+        "autoritinerario": "Goyo Degano",
+        "precio": "💵💵💵💵💵",
+        "duracion": "8hrs",
+        "etiquetas": "#baroque #opera #history #cultural ",
+        "likes": "0",
+        "actividades": [
+            {
+                "atracciones": "Historic Center of Vienna",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "oper",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "Beautiful Squares",
+        "autorimagen": "https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2021/06/appa-avatar.jpg?fit=1280%2C720&quality=80&ssl=1",
+        "autoritinerario": "Appa",
+        "precio": "💵💵",
+        "duracion": "2hs",
+        "etiquetas": "#sunset #walk #fountainOfWishes",
+        "likes": "0",
+        "actividades": [
+            {
+                "atracciones": "Fontana Di Trevi ride",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "Piazza Capidoglio ride",
+                "imagen": "",
+                "descripcion": "romaroma"
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "The canal of love",
+        "autorimagen": "https://images.generated.photos/tX7bzopZXOQYlHYIk6XBza65QxI0XS1-mxWqXyOk_8o/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTYzNTUxLmpwZw.jpg",
+        "autoritinerario": "Jessica Richards",
+        "precio": "💵💵💵💵",
+        "duracion": "5hs",
+        "etiquetas": "#lovers #floatingcity #date",
+        "likes": "0",
+        "actividades": [
+            {
+                "atracciones": "paseo en bote",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "restaurante",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "Walking around Madrid",
+        "autorimagen": "https://media.revistavanityfair.es/photos/60e82bd2af2c957f3efefd50/master/w_1600%2Cc_limit/246523.jpg",
+        "autoritinerario": "Tom Cruise",
+        "precio": "💵💵",
+        "duracion": "7hs",
+        "etiquetas": "#sunnyday #ride #tour",
+        "likes": "💕0"
+            "actividades": [
+            {
+                "atracciones": "paseo en bicicleta",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "restaurante",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+    {
+        "nombreitinerario": "Party Night in Madrid",
+        "autorimagen": "https://images.generated.photos/x7djIcDr297AqFForz_LGJjHQYQuPx1oyqwRZLlqrQA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODM4ODA3LmpwZw.jpg",
+        "autoritinerario": "Christopher James",
+        "precio": "💵💵",
+        "duracion": "3hs",
+        "etiquetas": "#friends #party #cider",
+        "likes": "0",
+        "actividades": [
+            {
+                "atracciones": "paseo en bote",
+                "imagen": "",
+                "descripcion": ""
+            },
+            {
+                "atracciones": "restaurante",
+                "imagen": "",
+                "descripcion": ""
+            }
+        ]
+    },
+}
 }
