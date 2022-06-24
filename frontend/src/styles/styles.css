@@ -191,15 +191,16 @@ button.learn-more:active::before {
     transform: translate3d(0, 0, -1em);
 }
 
-/*.paginaVacia {
+.noitineraries{
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    height: 84.6vh;
-    background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
+    height: 81.5vh;
+    background-image: url(https://www.rivkazibelman.com.ar/wp-content/uploads/2020/08/under_construction_pink_hat.jpg);
     background-repeat: no-repeat;
    background-position: center;
-}*/
+  
+}
 .input {
     border: none;
     border-radius: 15px;

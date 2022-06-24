@@ -19,6 +19,7 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(itinerariesActions.readItineraries(id))
+    //eslint-disable-next-line     
   }, [id]);
 
   const itineraries = useSelector((store) => store.itinerariesReducers.itineraries)
@@ -26,7 +27,7 @@ export default function Detail() {
 
   return (
     <>
-      {itineraries.length > 0 ? <Itinerary className="card-itinerary" itineraries={itineraries} /> : <p>no itineraries</p>}
+      {itineraries.length > 0 ? <Itinerary  className="card-itinerary" itineraries={itineraries} /> : <p className="noitineraries">no itineraries</p>}
 
     </>
 
