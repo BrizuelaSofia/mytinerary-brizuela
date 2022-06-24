@@ -3,6 +3,7 @@ const Itinerary = require("../models/itinerary"); //importamos nuestro modelo de
 const itinerariesControllers = {
   addItinerary: async (req, res) => {
     const {
+      nombreitinerario,
       autoritinerario,
       autorimagen,
       precio,
@@ -16,6 +17,7 @@ const itinerariesControllers = {
     let error = null;
     try {
       itinerary = await new Itinerary({
+        nombreitinerario: nombreitinerario,
         autoritinerario: autoritinerario,
         autorimagen: autorimagen,
         precio: precio,

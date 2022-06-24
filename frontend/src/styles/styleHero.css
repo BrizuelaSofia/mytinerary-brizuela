@@ -62,7 +62,7 @@
 }
 
 
-.herotitulo{
+.herotitulo {
     font-family: 'Kaushan Script', cursive;
     font-size: 3rem;
     margin-bottom: 2.5rem;
@@ -76,6 +76,24 @@
 
     
 }
+
+.formatoItinerary{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+h5{
+   padding: 3rem;
+
+}
+ .textItinerary{
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 2.5rem;
+    text-shadow: 0px 0px 15px blueviolet;
+    padding-top: 5rem;
+
+ }
+
 
 .heroparrafo{
     padding: .5rem;
