@@ -15,6 +15,7 @@ function Cities(props) {
 
   useEffect(() => {
     dispatch(citiesActions.filterCities(inputValue))
+    // eslint-disable-next-line
   },[inputValue])
 
   const filtroCiudades = useSelector(store => store.citiesReducers.filter)
@@ -22,10 +23,10 @@ function Cities(props) {
   return (                                                                                                                                                                
     <div className="fondociudades altura" >
       <div className="inputsearch">
-        <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" name="text" className="input" placeholder="Type here!"  />
+        <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" name="text" className="input" placeholder="Search by city!"  />
       </div>
 
-     <div className="tarjetas"> { filtroCiudades?.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
+     <div className="tarjetas"> {filtroCiudades?.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
     </div>
   );
 }

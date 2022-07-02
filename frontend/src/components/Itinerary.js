@@ -36,8 +36,8 @@ export default function Itinerary({ itineraries }) {
 
       {itineraries.map(itinerary => {
         return (
-          <div className="fondo">
-            <Card className="card-itinerary" sx={{ width: 400, m:11, }}  key={itinerary._id}>
+          <div>
+            <Card className="card-itinerary" sx={{ width: 400, m:23 }}  key={itinerary._id}>
               <h1 className='textItinerary'> {itinerary.nombreitinerario}</h1>
               <CardHeader
 
@@ -76,11 +76,19 @@ export default function Itinerary({ itineraries }) {
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-
-
                   <Typography>
-                    Coming Soon 🛠
+                    Coming soon🛠
                   </Typography>
+
+              {/* <div className='activities'>
+                  <img className='activity' src={itinerary.autorimagen}
+                />
+                   <img className='activity' src={itinerary.autorimagen}
+                />
+                   <img className='activity' src={itinerary.autorimagen}
+                />
+              </div> */}
+                 
 
                 </CardContent>
               </Collapse>

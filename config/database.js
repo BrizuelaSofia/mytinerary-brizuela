@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGO_URI,{ //utilizo el método connect de mongoos
 
 
 
+
 //use efect, cuando pones un valor dentro del corchete cambia. con el corchete vacio le estamos diciendo q se renderiza una vez se va a montar cada vez  recarguemos, 
 //el estado es como la recarga de la pag.
 

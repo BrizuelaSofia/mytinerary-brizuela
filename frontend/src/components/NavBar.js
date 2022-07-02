@@ -24,7 +24,10 @@ const pages = [
   { nombre: "Home", to: "/" },
   { nombre: "Cities", to: "/Cities" },     //nombre del estado  en la constante  entre [] va el valor del estado inicial.
 ];
-const settings = ["Sign In", "Sign Up"];   
+const settings = [
+  { nombre: "Sign In", to:"/Users" }, 
+  { nombre:"Sign Up", to:"/SignUp" }
+];   
 
 
 const NavBar = () => {
@@ -123,7 +126,7 @@ const NavBar = () => {
           <Box></Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+          <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="iconousuario" src={usuario} style={{ width: "100%", backgroundColor:'white', borderRadius:'4rem' }}/>
               </IconButton>
@@ -144,10 +147,10 @@ const NavBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+              {settings.map((setting, index) => (
+                <LinkRouter key={index} to={setting.to} onClick={handleCloseUserMenu}>
+                  <Button textAlign="center">{setting.nombre}</Button>
+                </LinkRouter>
               ))}
             </Menu>
           </Box>

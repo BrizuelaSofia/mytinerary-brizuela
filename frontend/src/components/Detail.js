@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 //import { Link as LinkRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
+import Button from '@mui/material/Button';
+import {Link as LinkRouterr} from 'react-router-dom';
 
 import itinerariesActions from '../redux/actions/itinerariesActions'
 import * as React from 'react';
@@ -26,10 +28,19 @@ export default function Detail() {
   //el console log se hace al parametro para ubicar la ruta de la api.
 
   return (
-    <>
-      {itineraries.length > 0 ? <Itinerary  className="card-itinerary" itineraries={itineraries} /> : <p className="noitineraries">no itineraries</p>}
+    <div className="fondo">
+    
+    <LinkRouterr to={'/Cities'}>
+              <Button className="learn-more botonback"> Back to cities
+              </Button>
+            </LinkRouterr>
+   
+    
+      { itineraries.length > 0 ? <Itinerary  className="card-itinerary" itineraries={itineraries} /> : <p className="noitineraries">no itineraries</p> }
 
-    </>
+      
+    </div>
+
 
   );
 }

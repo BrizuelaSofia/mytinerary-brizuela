@@ -32,6 +32,17 @@ Router.route("/itineraries/:id")
 
 Router.route("/itineraries/city/:id").get(readItineraries)
 
+const {signIn,signUp, verifyMail} = require('../controllers/usersControllers')
+const validator = require("../config/validator")
+
+Router.route('/auth/signUp')
+.post(validator, signUp)
+//validator
+Router.route('/auth/signIn')
+.post(signIn)
+Router.route('/verify/:string')
+.get(verifyMail)
+
 
 
 module.exports = Router; //exporto el modulo para requerir las rutas en server, para poder conectrme 

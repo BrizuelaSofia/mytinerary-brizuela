@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+
 
 .main {
     flex-grow: 1;
@@ -35,6 +38,12 @@
 /*arriba y abajo es el primero e izquierda y derecha el de 3. orden: arriba derecha, abajo, izquierda*/
 .cadaCard {
     margin: 3.5rem;
+
+}
+
+.textcities{
+    font-family: 'Cookie', cursive !important; 
+    font-size: 2rem !important;
 }
 
 
@@ -191,11 +200,11 @@ button.learn-more:active::before {
     transform: translate3d(0, 0, -1em);
 }
 
-.noitineraries{
+.noitineraries {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    height: 81.5vh;
+    height: 79vh;
     background-image: url(https://www.rivkazibelman.com.ar/wp-content/uploads/2020/08/under_construction_pink_hat.jpg);
     background-repeat: no-repeat;
    background-position: center;
@@ -285,9 +294,17 @@ a {
 
 }
 
+.botonback{
+    margin-top: 3rem !important;
+    
+}
+
+
 .fondo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-image: url(https://i.pinimg.com/736x/c1/ef/cc/c1efcc7db15ba749b94b31b1110c1e56.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -298,5 +315,22 @@ a {
 
 .card-itinerary {
     border-radius: 1px 1px 1px 4px black !important;
+    width: 40rem !important;
+    margin:9rem !important
 
 }
+
+
+
+
+/* .activities{
+    display: flex; 
+    height: 10rem;
+    gap: .5rem;
+  
+
+} */
+/* .activity{
+    height: 5rem
+} */
+

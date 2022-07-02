@@ -11,7 +11,7 @@ function Gallery() {
       <Carousel
         cols={2}
         rows={2}
-        gap={15}
+        gap={30}
         autoplay={4000}
         loop
         mobileBreakpoint={300}

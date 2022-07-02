@@ -35,7 +35,7 @@ const Footer = () => {
             <img src={logo} alt="logo" style={{ width: "80px" }} />
           </div> 
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
+          <div sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
             {pages.map((item, index) => (
               <LinkRouter key={index} to={item.to} onClick={handleCloseNavMenu}>
                 <Button sx={{ my: 2, color: "white", display: "block" }}>
@@ -43,7 +43,7 @@ const Footer = () => {
                 </Button>
               </LinkRouter>
             ))}
-          </Box>
+          </div>
 
           <Box sx={{ color: "black" }}>
             <FacebookRoundedIcon />
