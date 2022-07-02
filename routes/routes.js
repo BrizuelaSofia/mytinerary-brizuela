@@ -32,8 +32,9 @@ Router.route("/itineraries/:id")
 
 Router.route("/itineraries/city/:id").get(readItineraries)
 
-const {signIn,signUp, verifyMail} = require('../controllers/usersControllers')
-const validator = require("../config/validator")
+const {signIn,signUp, verifyMail, verifyToken} = require('../controllers/usersControllers')
+const validator = require('../config/validator')
+const passport = require('../config/passport')
 
 Router.route('/auth/signUp')
 .post(validator, signUp)
@@ -42,7 +43,8 @@ Router.route('/auth/signIn')
 .post(signIn)
 Router.route('/verify/:string')
 .get(verifyMail)
-
+Router.route('/auth/loginToken')
+.get(passport.authenticate('jwt', {session:false}), verifyToken)
 
 
 module.exports = Router; //exporto el modulo para requerir las rutas en server, para poder conectrme 

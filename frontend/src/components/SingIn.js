@@ -16,6 +16,7 @@ import {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import  userActions from '../redux/actions/usersActions'
 import GoogleSignIn from './signInGoogle';
+import {useNavigate} from 'react-router-dom'
 
 
 function Copyright(props) {
@@ -35,17 +36,21 @@ const theme = createTheme();
 
  export default function SignInSide() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [password, setPassword] = useState("");
 const  [email, setEmail]= useState("")
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = {
       email: email,
       password: password,
       from: "signUpForm"
     }
-    dispatch(userActions.SignIn(data))
+    const res = await dispatch(userActions.SignIn(data)) 
+    if(res.success){
+      navigate('/')
+    }
    };
 
 //  

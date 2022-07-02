@@ -11,7 +11,9 @@ const express=require('express') //requiero el módulo de express
 
 const app = express() //ejecuto express para crear una app.
 const cors=require('cors')//requiero cors
+const passport = require("passport")
 app.use(cors())// es un middle de seguridad la app/server usa el metodo cors para obtener permisos de 
+app.use(passport.initialize())
 //acceso a la base de datos
 app.use(express.json()) //ejecuto express para pasar todo a json.
 app.use('/api', Router) //la app/server usa las rutas y como intermediario añade a cada endpoint => 

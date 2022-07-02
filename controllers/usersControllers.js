@@ -6,7 +6,7 @@ const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
 const sendEmail = require('../controllers/sendEmail')
 //const nodemailer = require('nodemailer')
-//const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 // firstName:{type:String, require:true},
 // lastname:{type:String, require:true},
 // email:{type:String, require},
@@ -123,9 +123,11 @@ const userControllers = {
                           
                             country: loginUser.country,
                             from:loginUser.from}
+                            const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })      
                         await loginUser.save()
+                                                                             
                         res.json({
-                            response: userData, 
+                            response: {token, userData}, 
                             success: true, 
                             from: from, 
                             message: `welcome back ${userData.firstName}!`})
@@ -146,9 +148,11 @@ const userControllers = {
                         
                             country: loginUser.country,
                             from:loginUser.from}
+                        const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })   
                         await loginUser.save()
+                         
                         res.json({
-                            response: userData, 
+                            response: {token, userData}, 
                             success: true, 
                             from: from, 
                             message: `welcome back ${userData.firstName}!`})
@@ -181,7 +185,22 @@ const userControllers = {
             success: false,
             message:`email hast not been confirmed yet!`
         })}
-    }
+    },
+    verifyToken:(req, res) => {
+        if(req.user){
+           res.json({success:true,
+            response: {id:req.user.id, 
+                       firstName:req.user.firstName,
+                       email:req.user.email, 
+                       from:"token"}, 
+            message:"Welcome again!"})
+            
+        }else{
+            
+            res.json({success:false,
+            
+            message:"Please, register again!"})}
+}
 }
 
 module.exports = userControllers
