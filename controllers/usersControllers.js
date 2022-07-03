@@ -200,7 +200,8 @@ const userControllers = {
             res.json({success:false,
             
             message:"Please, register again!"})}
-}
+},
+
 }
 
 module.exports = userControllers

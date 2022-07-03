@@ -87,6 +87,16 @@ const userActions = {
                 localStorage.removeItem('token')
             })
     }
-  }
+  },
+  signOut: () => {
+    return (dispatch, getState) => {
+
+        localStorage.removeItem('token')
+        dispatch({
+            type: 'SIGNIN',
+            payload: null
+        })
+    }
+},
 }
 export default userActions

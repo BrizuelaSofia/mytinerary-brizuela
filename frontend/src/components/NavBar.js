@@ -19,9 +19,12 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import {useSelector, useDispatch} from 'react-redux'
+import usersActions from '../redux/actions/usersActions'
+import {useNavigate} from "react-router-dom"
 
 const pages = [
-  { nombre: "Home", to: "/" },
+  { nombre: "Home", to: "/"  },
   { nombre: "Cities", to: "/Cities" },     //nombre del estado  en la constante  entre [] va el valor del estado inicial.
 ];
 const settings = [
@@ -34,6 +37,9 @@ const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);   //nombre del estado  en la constante  entre [] va el valor del estado inicial.
 
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const user = useSelector(store => store.userReducers.user)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const handleOpenNavMenu = (event) => {  //en esta función se crea el metodo  q abriría el menu y por me
     //dio de una funcion flecha le digo q me retorne el proximo valor del estado en el momento en el q se dispare el Evento.
@@ -50,6 +56,10 @@ const NavBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  function signOut() {
+    dispatch(usersActions.signOut())
+    navigate ("/")
+  }
 
   return (
     <AppBar
@@ -147,7 +157,15 @@ const NavBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting, index) => (
+              {user ? (
+                <Box>
+                  <MenuItem sx={{'&:hover': {bgcolor: 'rgb(224,224,224)'}}} onClick={handleCloseUserMenu}>
+                    <Typography sx={{padding: '2px', paddingLeft: '6px', paddingRight: '6px', color: 'rgb(2,0,3)'}}
+                     onClick={signOut}>Sign Out</Typography>
+                  </MenuItem>
+                </Box>
+               ):
+              settings.map((setting, index) => (
                 <LinkRouter key={index} to={setting.to} onClick={handleCloseUserMenu}>
                   <Button textAlign="center">{setting.nombre}</Button>
                 </LinkRouter>
