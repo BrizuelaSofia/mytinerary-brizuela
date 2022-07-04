@@ -28,9 +28,9 @@ const Footer = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#c287a0" }}>
+    <AppBar position="static" className="footericons"sx={{ backgroundColor: "#c287a0" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters className="footericons">
+        <Toolbar disableGutters className="footericons2" >
           <div sx={{ display: { xs: "flex", md: "flex" }, mr: 1 }}>
             <img src={logo} alt="logo" style={{ width: "80px" }} />
           </div> 

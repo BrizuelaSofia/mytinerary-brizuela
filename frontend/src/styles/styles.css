@@ -3,6 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 
+.appbar{
+    display: flex !important;
+    justify-content:space-around !important
+}
+.css-av538e-MuiButtonBase-root-MuiIconButton-root{
+    padding-right: 3rem !important;
+}
 
 .main {
     flex-grow: 1;
@@ -116,18 +123,30 @@
     background-color: violet !important;
 } color de toodo el navbar ver q clase tiene solo a city/home*/
 
-
-
-
-.footericons {
-    background-color: #c287a0;
-    ;
+/* .navbar{
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+}
+.iconsnavbar{
+  
+}*/
+
+ .footericons {
+    display: flex ;
+   padding: 0 !important;
+
 
 
 }
+.css-19r6kue-MuiContainer-root{
+    padding: 0 !important;
+}
+.footericons2{
+    background-color: #c287a0;
+    padding: 0 !important;
+    justify-content: space-around;
+    flex-direction: row ;
+    
+}  
 
 button {
     position: relative;
@@ -200,11 +219,20 @@ button.learn-more:active::before {
     transform: translate3d(0, 0, -1em);
 }
 
+.fondosignuppp{
+    background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F88%2F35%2F83%2F88358363a25c1b3fa002e00fa8c95094.jpg&imgrefurl=https%3A%2F%2Fco.pinterest.com%2Fpin%2F639581584571748035%2F&tbnid=6JKqVoev49InuM&vet=1&docid=zGYIy6VEDP9sFM&w=640&h=799&itg=1&source=sh%2Fx%2Fim) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    object-fit: cover !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    min-height: 100vh !important;
+}
 .noitineraries {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    height: 79vh;
+    
     background-image: url(https://www.rivkazibelman.com.ar/wp-content/uploads/2020/08/under_construction_pink_hat.jpg);
     background-repeat: no-repeat;
    background-position: center;
@@ -315,9 +343,53 @@ a {
 
 .card-itinerary {
     border-radius: 1px 1px 1px 4px black !important;
-    width: 40rem !important;
-    margin:9rem !important
 
+}
+/* fondo "create account del sign up" */
+
+
+
+.inputcountry{
+    width: 20rem !important;
+    border-radius: 50px !important;
+    background-image:  url(../images/fondohero.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    object-fit: cover !important;
+    
+}
+.borderradius, .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root{
+    border-radius: 50px !important;
+    
+}
+.firstName{
+    border-radius: 50px !important;
+    background-image:  url(../images/fondohero.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    object-fit: cover !important;
+
+}
+.form{
+    margin:0 !important
+}
+
+.botonform{
+    width:10rem !important;
+    height:3rem !important
+
+}
+
+element.style {
+    position: relative;
+}
+/* centrado: boton google, registro y logueo de usuario */
+.S9gUrf-YoZ4jf{
+    display: flex;
+    justify-content: center;
+    margin: 2rem !important;
 }
 
 

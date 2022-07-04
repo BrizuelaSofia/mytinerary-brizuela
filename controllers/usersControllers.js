@@ -22,10 +22,12 @@ const userControllers = {
     signUp: async (req,res) => {
         //console.log('REQ BODY SING UP USER')
         //console.log(req.body)
-        const {firstName, lastName, email,  country, password, from} = req.body.data
+        const {firstName, lastName, imageUser, email,  country, password, from} = req.body.data
+        console.log(req.body.data)
+
         //ACLARACION: password y from son ARRAYS
         //cada elemento de password se relaciona con un unico elemento de from
-        //el indice de cada contraseña coincide con el indice de cada from
+        //el indice de cada contraseña coincide con el indice de cada fr
         //es decir:
         //la contraseña[0] es del from[0]
         //la contraseña[2] es del from[2]
@@ -36,7 +38,8 @@ const userControllers = {
             const uniqueString = crypto.randomBytes(15).toString('hex') //utilizo losmetodos cripto
             if (!newUser) { //si NO existe el usuario
                 const hashWord = bcryptjs.hashSync(password, 10) //hasheo la contraseña
-                const myNewUser = await new User({firstName, lastName, email, country, verification,
+                const myNewUser = await new User({firstName, lastName, imageUser, email, country, 
+                    verification:verification,
                     uniqueString: uniqueString,
                     password: [hashWord],
                     from: [from]})
@@ -44,7 +47,6 @@ const userControllers = {
                     //ACLARACION: ahora el if/else tienen la misma data
                     //pero van a cambiar cuando enviemos correo de verificacion
                     myNewUser.verification = true,
-                   
                     await myNewUser.save()
                      console.log(myNewUser)
                     await sendEmail(email, uniqueString)
@@ -53,6 +55,7 @@ const userControllers = {
                         from: from,
                         message: `check ${email} and finish your SIGN UP!`}) 
                     } else { //si la data viene de una red social
+                    myNewUser.verification = true,
                     await myNewUser.save()
                     res.json({
                         success: true, 
@@ -80,6 +83,7 @@ const userControllers = {
                     const hashWord = bcryptjs.hashSync(password, 10)
                     newUser.password.push(hashWord)
                     newUser.from.push(from)
+                    newUser.imageUser.push(imageUser)
                     newUser.verification = true
                     await newUser.save()
                     res.json({
@@ -101,7 +105,7 @@ const userControllers = {
     signIn: async (req, res) => {
         //console.log('REQ BODY SIGN IN USER')
         //console.log(req.body)
-        const {email, password, from} = req.body.data
+        const {email, password, from, imageUser} = req.body.data
         try {
             const loginUser = await User.findOne({email}) //buscamos por email
             if (!loginUser) { //si NO existe el usuario
@@ -120,9 +124,11 @@ const userControllers = {
                             firstName: loginUser.firstName,
                             lastName: loginUser.lastName,
                             email: loginUser.email,
-                          
+                            imageUser:loginUser.imageUser,
                             country: loginUser.country,
                             from:loginUser.from}
+                            console.log(userData)
+                            
                             const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })      
                         await loginUser.save()
                                                                              
@@ -145,7 +151,7 @@ const userControllers = {
                             firstName: loginUser.firstName,
                             lastName: loginUser.lastName,
                             email: loginUser.email,
-                        
+                            imageUser:loginUser.imageUser,
                             country: loginUser.country,
                             from:loginUser.from}
                         const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })   
@@ -192,6 +198,7 @@ const userControllers = {
             response: {id:req.user.id, 
                        firstName:req.user.firstName,
                        email:req.user.email, 
+                       imageUser:req.user.imageUser,
                        from:"token"}, 
             message:"Welcome again!"})
             

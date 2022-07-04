@@ -34,10 +34,10 @@ export default function Itinerary({ itineraries }) {
   return (
     <>
 
-      {itineraries.map(itinerary => {
+      {itineraries.map( itinerary => {
         return (
           <div>
-            <Card className="card-itinerary" sx={{ width: 400, m:23 }}  key={itinerary._id}>
+            <Card className="card-itinerary" sx={{ width: 300, m:23 }}  key={itinerary._id}>
               <h1 className='textItinerary'> {itinerary.nombreitinerario}</h1>
               <CardHeader
 

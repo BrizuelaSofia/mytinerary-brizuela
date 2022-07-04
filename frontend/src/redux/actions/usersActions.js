@@ -32,7 +32,7 @@ const userActions = {
                 localStorage.setItem('token', res.data.response.token)
                 console.log(res.data.response.token)
                 dispatch(
-                    {type: "SIGNIN", payload : res.data}
+                    {type: "SIGNIN", payload: res.data.response.userData}
             )
                 
                     dispatch({type: "MESSAGE", payload: {
@@ -64,7 +64,7 @@ const userActions = {
         //console.log(user)
         .then (user => {if (user.data.success) {
          dispatch({
-                    type: 'USER',
+                    type: 'SIGNIN',
                     payload: user.data.response
                 })
                 dispatch({

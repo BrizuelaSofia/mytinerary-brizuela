@@ -37,7 +37,10 @@ const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);   //nombre del estado  en la constante  entre [] va el valor del estado inicial.
 
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const user = useSelector(store => store )
   const user = useSelector(store => store.userReducers.user)
+ console.log(user)
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -64,16 +67,17 @@ const NavBar = () => {
   return (
     <AppBar
       position="static"
-      sx={{ backgroundColor: "#c287a0;" }}   
-      className="appbar"
+      sx={{ backgroundColor: "#c287a0", }}   
+      className="footericons"
+     
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+        <Toolbar disableGutters className="footericons2">
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1, mx:5 }}>
             <img src={logo} alt="logo" style={{ width: "80px" }} />
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, mx:5 }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -109,7 +113,7 @@ const NavBar = () => {
                   onClick={handleCloseNavMenu}
                 >
                   <MenuItem>
-                    <Typography textAlign="center">{page.nombre}</Typography>
+                    <Typography>{page.nombre}</Typography>
                   </MenuItem>
                 </LinkRouter>
               ))}
@@ -138,7 +142,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="iconousuario" src={usuario} style={{ width: "100%", backgroundColor:'white', borderRadius:'4rem' }}/>
+                {user? <Avatar  alt="imageUser" src={user.imageUser} /> : <Avatar src={usuario} style={{ width: "100%", backgroundColor:'white', borderRadius:'4rem', mx:5 }}/> } 
               </IconButton>
             </Tooltip>
             <Menu
@@ -167,7 +171,7 @@ const NavBar = () => {
                ):
               settings.map((setting, index) => (
                 <LinkRouter key={index} to={setting.to} onClick={handleCloseUserMenu}>
-                  <Button textAlign="center">{setting.nombre}</Button>
+                  <Button>{setting.nombre}</Button>
                 </LinkRouter>
               ))}
             </Menu>

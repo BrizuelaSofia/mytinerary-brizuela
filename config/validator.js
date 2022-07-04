@@ -2,14 +2,15 @@ const joi = require('joi')
 
 const validator = (req, res, next) => {
     //console.log("req.body es")
-    //console.log(req.body)
+    console.log(req.body.data)
+
     const schema = joi.object({
         firstName: joi.string()
             .min(3)
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-           // .required()
+           .required()
             .messages({
                 'string.min': 'name: min 3 characters',
                 'string.max': 'name: max 20 characters'
@@ -19,7 +20,7 @@ const validator = (req, res, next) => {
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-            // .required()
+            .required()
             .messages({
                 'string.min': '"last name": min 3 characters',
                 'string.max': '"last name": max 20 characters'
@@ -28,9 +29,10 @@ const validator = (req, res, next) => {
             .email({ minDomainSegments: 2 })
             .required(),
             
-    //    imgeUser: joi.string()
-    //        .trim()
-    //        .required(),    
+       imageUser: joi.string()
+           .trim()
+           .required(),
+         
       
         password: joi.string()
             .min(8)
@@ -51,6 +53,7 @@ const validator = (req, res, next) => {
 
     const validation = schema.validate(req.body.data, { abortEarly: false })
     console.log(validation)
+
     if (validation.error) {
         return res.json({ success: false, from: 'validator', message: validation.error.details, test: validation })
     }

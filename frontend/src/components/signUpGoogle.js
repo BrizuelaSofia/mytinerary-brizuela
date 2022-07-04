@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux';
 import usersActions from '../redux/actions/usersActions'
 
 
-export default function GoogleSignUp() {
+
+export default function GoogleSignUp({selectCountry}) {
     const dispatch = useDispatch();
 
 
@@ -16,8 +17,9 @@ export default function GoogleSignUp() {
            
               firstName: userObject.given_name,
               lastName:userObject.family_name,
+              imageUser:userObject.picture,
               email:userObject.email, 
-              country:"Argentina",
+              country: selectCountry,
               password:userObject.sub, 
               from: 'google'
           

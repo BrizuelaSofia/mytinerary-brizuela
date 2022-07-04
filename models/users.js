@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 //libreria que permite una conexion entre la app y la base de datos escribir 
 //consultas  de mongoDB
 const userSchema = new mongoose.Schema({
-     firstName:{type:String, },
-     lastname:{type:String,},
+     firstName:{type:String },
+     lastname:{type:String},
      email:{type:String, required:true},
      password:{type:Array, required:true},
-     country: {type:String, },  
-    
+     country: {type:String},  
+     imageUser:{type:String},
      from: {type:Array},
      uniqueString:{type:String, required:true},
      verification:{type:Boolean, required:true}
