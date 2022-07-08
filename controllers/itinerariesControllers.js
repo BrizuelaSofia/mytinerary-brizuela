@@ -10,6 +10,8 @@ const itinerariesControllers = {
       duracion,
       etiquetas,
       likes,
+      activities,
+      comments,
       cityid
      
     } = req.body.data;
@@ -24,6 +26,8 @@ const itinerariesControllers = {
         duracion: duracion,
         etiquetas: etiquetas,
         likes: likes,
+        activities:activities,
+        comments:comments,
         cityid: cityid
       
       }).save();
@@ -111,8 +115,8 @@ const itinerariesControllers = {
     let itineraries
     let error= null
     try{
-        itineraries= await Itinerary.find({cityid:id})
-        .populate("cityid")
+        itineraries= await Itinerary.find({cityid:id}).populate("activities")
+        
     }catch (err) {
         error = err
     }
@@ -121,7 +125,71 @@ const itinerariesControllers = {
         success: error ? false : true,
         error: error
 })
-}
+},
+likeDislike: async (req,res) => {
+  //console.log(req)
+  let id = req.params.id //id del itinerario, donde queremos poner o sacar el like. llega por parametro desde axios
+  console.log(id)
+  let user = req.user.id //id del usuario q sale de la respuesta por passport 
+  console.log(user)
+  try { 
+       let itinerary = await Itinerary.findOne({_id:id}) //buscamos un itinerario en donde el object id sea igual al id q pasamos por parametro
+     
+
+      if (itinerary.likes.includes(user)) { //de este itinerario encontrado buscamos la propiedad like y si esa propiedad incluye el usuario
+        //si encontramos el itinerario lo actualizamos.
+         Itinerary.findOneAndUpdate({_id:id}, {$pull:{likes:user}}, {new:true}) //extraemos de like el usuario y devolvemos el nuevo dato
+              .then(response => res.json({
+                  response: response.likes, 
+                  success: true
+              }))
+              .catch(error => console.log(error))
+      } else { //en el caso en q no este el id del usuario dentro del array de likes hace lo mismo pero utilizando push (agrega el usuario)
+          Itinerary.findOneAndUpdate({_id:id}, {$push:{likes:user}}, {new:true})
+              .then(response => res.json({
+                  response: response.likes, 
+                  success: true
+              }))
+              .catch(error => console.log(error))
+      }
+  } catch (error) {
+      res.json({
+          response: error,
+          success: false
+      })
+  } 
+},
+// likeDislike: async (req,res) => {
+//   //console.log(req)
+//   let itineraryId = req.params.id // llega por parametro desde axios
+//   console.log(itineraryId)
+//   let user = req.user.id //llega por respuesta de passport
+//   // console.log("Console de USER")
+//   // console.log(user)
+//   try { 
+//       let itinerary = await Itinerary.findOne({_id:itineraryId})
+//       if (itinerary.likes.includes(user)) {
+//           Itinerary.findOneAndUpdate({_id:itineraryId}, {$pull:{likes:user}}, {new:true})
+//               .then(response => res.json({
+//                   response: response.likes, 
+//                   success: true
+//               }))
+//               .catch(error => console.log(error))
+//       } else {
+//           Itinerary.findOneAndUpdate({_id:itineraryId}, {$push:{likes:user}}, {new:true})
+//               .then(response => res.json({
+//                   response: response.likes, 
+//                   success: true
+//               }))
+//               .catch(error => console.log(error))
+//       }
+//   } catch (error) {
+//       res.json({
+//           response: error,
+//           success: false
+//       })
+//   } 
+// }
 }
 
 module.exports = itinerariesControllers;

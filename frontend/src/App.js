@@ -57,8 +57,8 @@ const user = useSelector(store => store.userReducers.user)
                <Route path="/" element={<Index/>} />
                <Route path="/Cities" element={<Cities />} />
                <Route path= "/City/:id" element={<Detail/>} />
-               <Route path="/Users" element={<Users/>}  />
-               <Route path="/SignUp" element={<SignUp/>}  />
+              {!user &&<Route path="/Users" element={<Users/>}  /> }
+               {!user && < Route path="/SignUp" element={<SignUp/>}  />}
             </Routes>
             <SnackBar/>
             <ScrollToTop

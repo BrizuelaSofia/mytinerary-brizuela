@@ -46,10 +46,11 @@ const userControllers = {
                 if (from === "signUpForm") { //si la data viene del formulario
                     //ACLARACION: ahora el if/else tienen la misma data
                     //pero van a cambiar cuando enviemos correo de verificacion
-                    myNewUser.verification = true,
+                    
                     await myNewUser.save()
+                     await sendEmail(email, uniqueString)
                      console.log(myNewUser)
-                    await sendEmail(email, uniqueString)
+                  
                     res.json({
                         success: true, 
                         from: from,
@@ -119,24 +120,27 @@ const userControllers = {
                 //filtramos en el array de contraseñas hasheadas si coincide la contraseña 
                 if (from === "signUpForm") { //si fue registrado por nuestro formulario                
                     if (checkedWord.length>0) { //si hay coincidencias
-                        const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
-                            id:loginUser._id,
-                            firstName: loginUser.firstName,
-                            lastName: loginUser.lastName,
-                            email: loginUser.email,
-                            imageUser:loginUser.imageUser,
-                            country: loginUser.country,
-                            from:loginUser.from}
-                            console.log(userData)
-                            
-                            const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })      
-                        await loginUser.save()
-                                                                             
-                        res.json({
-                            response: {token, userData}, 
-                            success: true, 
-                            from: from, 
-                            message: `welcome back ${userData.firstName}!`})
+                        if(loginUser.verification){
+                            const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
+                                id:loginUser._id,
+                                firstName: loginUser.firstName,
+                                lastName: loginUser.lastName,
+                                email: loginUser.email,
+                                imageUser:loginUser.imageUser,
+                                country: loginUser.country,
+                                from:loginUser.from}
+                                console.log(userData)
+                                
+                                const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })      
+                            await loginUser.save()
+                                                                                 
+                            res.json({
+                                response: {token, userData}, 
+                                success: true, 
+                                from: from, 
+                                message: `welcome back ${userData.firstName}!`})
+                        }
+                       
                     } else { //si no hay coincidencias
                         res.json({
                             success: false, 

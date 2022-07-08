@@ -36,7 +36,11 @@ export default function Detail() {
             </LinkRouterr>
    
     
-      { itineraries.length > 0 ? <Itinerary  className="card-itinerary" itineraries={itineraries} /> : <p className="noitineraries">no itineraries</p> }
+      { itineraries.length > 0 ? itineraries.map(itinerary =>{
+        return (
+          <Itinerary key={itinerary._id} data={itinerary} className="card-itinerary" />
+        )
+      })  : <p className="noitineraries">no itineraries</p> }
 
       
     </div>

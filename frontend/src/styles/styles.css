@@ -342,7 +342,8 @@ a {
 }
 
 .card-itinerary {
-    border-radius: 1px 1px 1px 4px black !important;
+    /* border-radius: 1px 1px 1px 4px black !important; */
+    border-radius: 30px !important
 
 }
 /* fondo "create account del sign up" */
