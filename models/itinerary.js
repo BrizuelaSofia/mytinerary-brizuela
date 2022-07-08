@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 //libreria que permite una conexion entre la app y la base de datos escribir 
 //consultas  de mongoDB
 const itinerarySchema = new mongoose.Schema({
-     nombreitinerario:{type:String, require:true},
+     nombreitinerario:{type:String, require:true}, 
      autoritinerario:{type:String, require:true},
      autorimagen:{type:String, require},
      precio:{type:String, require:true},
@@ -18,8 +18,7 @@ const itinerarySchema = new mongoose.Schema({
      }],
     cityid:{type: mongoose.Types.ObjectId, ref:"cities"}
 
-})
-
+}) 
 const Itinerary = mongoose.model('itineraries', itinerarySchema)
 module.exports = Itinerary 
 /*{"data":{

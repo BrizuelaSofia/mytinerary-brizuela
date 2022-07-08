@@ -29,21 +29,23 @@ const commentsControllers = {
         //console.log(req.body)
         //console.log('REQ.USER')
         //console.log(req.user)
-        const {commentId,comment} = req.body.comment
+        const {comment} = req.body.comment //pido comentario por body y id del comment por params
       //  console.log(req.body.comment) para ver si llegan bien los datos al front.
-        const user = req.user._id
+        const commentId = req.params.id 
         try {
-            const newComment = await Itinerary
-            .findOneAndUpdate({"comments._id": commentId}, {$set: {"comments.$.comment": comment}}, {new: true})
+            const newComment = await Itinerary.findOneAndUpdate({"comments._id": commentId}, {$set: {"comments.$.comment": comment}}, {new: true})
             console.log(newComment)
             res.json({success: true,
-                response: {newComment},
+                response: { newComment },
                 message: "the comment has been modified"})
         }
         catch (error) {
             console.log(error)
             res.json({ success: true,
-                message: "sorry! try again!" })
+                message: "sorry! try again!",
+                console: console.log(error)
+             })
+                
         }
     },
 
@@ -55,7 +57,8 @@ const commentsControllers = {
         const id = req.params.id
         const user = req.user._id
         try {
-            const deleteComment = await Itinerary.findOneAndUpdate({"comments._id": id}, {$pull: {comments: {_id: id}}}, {new: true})
+            const deleteComment = await Itinerary.findOneAndUpdate({"comments._id": id}, 
+            {$pull: {comments: {_id: id}}}, {new: true})
             res.json({success: true,
                 response: {deleteComment},
                 message: "the comment has been deleted"})

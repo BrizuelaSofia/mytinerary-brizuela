@@ -1,6 +1,7 @@
 const Router = require("express").Router(); //requerimos express q tiene un metodo q es router,
 // me permite traer los endpoints.  
 //(enlace entre backend y frontend)
+const passport = require('../config/passport')
 const citiesControllers = require("../controllers/citiesControllers");
 
 
@@ -24,7 +25,7 @@ const itinerariesControllers = require("../controllers/itinerariesControllers");
 const { getItineraries, addItinerary, removeItinerary, modifyItinerary, getOneItinerary, readItineraries, likeDislike } = itinerariesControllers;
 
 Router.route("/itineraries").get(getItineraries).post(addItinerary);
-const passport = require('../config/passport')
+
 Router.route("/itineraries/:id")
   .delete(removeItinerary)
   .put(modifyItinerary)
@@ -61,11 +62,11 @@ Router.route('/activities/:id')
 const { addComment,deleteComment,modifyComment} = require('../controllers/commentsControllers')
 Router.route('/itineraries/comment')
 .post(passport.authenticate('jwt', {session: false}), addComment)
-.put(passport.authenticate('jwt', {session: false}), modifyComment)
+
 
  Router.route('/itineraries/comment/:id')
-// .post(passport.authenticate('jwt', {session: false}), deleteComment)
-
+ .post(passport.authenticate('jwt', {session: false}), deleteComment)
+ .put(passport.authenticate('jwt', {session: false}), modifyComment)
 // Router.route('/activities/itineraries/:id')
 // .get(findActFromIti)
 

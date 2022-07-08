@@ -120,7 +120,7 @@ const userControllers = {
                 //filtramos en el array de contraseñas hasheadas si coincide la contraseña 
                 if (from === "signUpForm") { //si fue registrado por nuestro formulario                
                     if (checkedWord.length>0) { //si hay coincidencias
-                        if(loginUser.verification){
+            
                             const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
                                 id:loginUser._id,
                                 firstName: loginUser.firstName,
@@ -139,7 +139,7 @@ const userControllers = {
                                 success: true, 
                                 from: from, 
                                 message: `welcome back ${userData.firstName}!`})
-                        }
+                        
                        
                     } else { //si no hay coincidencias
                         res.json({

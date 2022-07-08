@@ -81,9 +81,7 @@ export default function Itinerary({ data }) {
               </CardContent>
               <CardActions disableSpacing>
                <LikesButton  props={data}/> 
-                <IconButton aria-label="add to favorites" >
-                  <FavoriteIcon sx={{ textShadow:'red' }} />
-                </IconButton>
+              
                 <Comments  props={data} /> 
 
                 <ExpandMore
@@ -96,15 +94,15 @@ export default function Itinerary({ data }) {
                 </ExpandMore>
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
+                <CardContent >
                   {data.activities.map((act) => {
                     return ( 
-                    <div key={act._id}>
+                    <div key={act._id} >
                       <div>
-                        <CardMedia component="img" height="100%"
+                        <CardMedia className='activities' component="img"
                         image={act.imageActivity} alt="activity" />
                         <div>
-                          <h3>{act.nameActivity}</h3>
+                          <h4>{act.nameActivity}</h4>
                         </div>
                       </div>
                       </div> 
@@ -112,10 +110,10 @@ export default function Itinerary({ data }) {
                   })}
                  
 
-              {/* <div className='activities'>
+              {/* <div >
                   <img className='activity' src={itinerary.autorimagen}
                 />
-                   <img className='activity' src={itinerary.autorimagen}
+                   <img  src={itinerary.autorimagen}
                 />
                    <img className='activity' src={itinerary.autorimagen}
                 />

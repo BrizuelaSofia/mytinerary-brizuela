@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const commentsActions = {
-   
+  
     addComment: (comment) => {
 
         const token = localStorage.getItem('token') //verifica si hay un usuario, va al token
@@ -15,7 +15,7 @@ const commentsActions = {
                     }
                 })
                 dispatch({
-                    type: 'message',
+                    type: 'MESSAGE',
                     payload: {
                         view: true,
                         message: res.data.message,
@@ -26,7 +26,7 @@ const commentsActions = {
             }
             else {
                 dispatch({
-                    type: 'message',
+                    type: 'MESSAGE',
                     payload: {
                         view: true,
                         message: "ingresa un comentario para guardarlo",
@@ -37,17 +37,17 @@ const commentsActions = {
         }
 
     },
-    modifyComment: (comment) => {
+    modifyComment: (id, comment) => { //el parametro tiene q ser id aca en modifi tmb asi? a okis
 
-        const token = localStorage.getItem('token')
+        const token = localStorage.getItem('token') //si por eso HABRE TOCADO ALGO EN RUTES 
         return async (dispatch, getState) => {
-            const res = await axios.put(`http://localhost:4000/api/itineraries/comment`, { comment }, {
+            const res = await axios.put(`http://localhost:4000/api//itineraries/comment/${id}` , { comment }, {
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${token}` 
                 }
             })
             dispatch({
-                type: 'message',
+                type: 'MESSAGE', 
                 payload: {
                     view: true,
                     message: res.data.message,
@@ -57,7 +57,7 @@ const commentsActions = {
 
             return res
         }
-    },
+    }, 
     deleteComment: (id) => {
 
         const token = localStorage.getItem('token')
@@ -69,7 +69,7 @@ const commentsActions = {
 
             })
             dispatch({
-                type: 'message',
+                type: 'MESSAGE',
                 payload: {
                     view: true,
                     message: res.data.message,

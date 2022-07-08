@@ -2,8 +2,8 @@ const Itinerary = require("../models/itinerary"); //importamos nuestro modelo de
 
 const itinerariesControllers = {
   addItinerary: async (req, res) => {
-    const {
-      nombreitinerario,
+    const { 
+      nombreitinerario, 
       autoritinerario,
       autorimagen,
       precio,
@@ -47,7 +47,7 @@ const itinerariesControllers = {
     let error = null;
     try {
       itineraries = await Itinerary.find().populate("cityid")
-      console.log(Itinerary);
+      // console.log(Itinerary);
     } catch (err) {
       error = err;
     }
@@ -55,8 +55,11 @@ const itinerariesControllers = {
       response: error ? "ERROR" : { itineraries },
       success: error ? false : true,
       error: error,
+      console:console.log(error)
     });
-  },
+  }, //no puede haber algo mal aca, no tocamos nada, estuvimos en rutas pero comentaba
+  //no tira ni el error del nombre
+
 
 
   removeItinerary: async (req, res) => {

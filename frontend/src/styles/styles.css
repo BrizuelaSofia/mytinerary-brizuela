@@ -393,17 +393,27 @@ element.style {
     margin: 2rem !important;
 }
 
+.modify{
+    background-color: plum;
+}
+.delete{
+    background-color: red;
+}
+.add{
+    background-color: #38b6ff;
+}
 
 
 
-/* .activities{
-    display: flex; 
-    height: 10rem;
-    gap: .5rem;
+
+ .activities{
+   
+ width: 10rem !important;
+ height: 8rem !important;
   
 
-} */
-/* .activity{
-    height: 5rem
-} */
+} 
+.css-46bh2p-MuiCardContent-root:last-child{
+    display: flex;
+}
 
