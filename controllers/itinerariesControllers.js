@@ -46,7 +46,7 @@ const itinerariesControllers = {
     let itineraries;
     let error = null;
     try {
-      itineraries = await Itinerary.find().populate("cityid")
+      itineraries = await Itinerary.find().populate("cityid").populate("comments.userId")
       // console.log(Itinerary);
     } catch (err) {
       error = err;
@@ -103,7 +103,7 @@ const itinerariesControllers = {
     let itinerary;
     let error = null;
     try {
-      itinerary = await Itinerary.findOne({ _id: id });
+      itinerary = await Itinerary.findOne({ _id: id }).populate("comments.userId");
     } catch (err) {
       error = err;
     }
@@ -144,14 +144,16 @@ likeDislike: async (req,res) => {
          Itinerary.findOneAndUpdate({_id:id}, {$pull:{likes:user}}, {new:true}) //extraemos de like el usuario y devolvemos el nuevo dato
               .then(response => res.json({
                   response: response.likes, 
-                  success: true
+                  success: true,
+                  message: "dislike :("
               }))
               .catch(error => console.log(error))
       } else { //en el caso en q no este el id del usuario dentro del array de likes hace lo mismo pero utilizando push (agrega el usuario)
           Itinerary.findOneAndUpdate({_id:id}, {$push:{likes:user}}, {new:true})
               .then(response => res.json({
                   response: response.likes, 
-                  success: true
+                  success: true,
+                  message: "Thanks for your like!"
               }))
               .catch(error => console.log(error))
       }

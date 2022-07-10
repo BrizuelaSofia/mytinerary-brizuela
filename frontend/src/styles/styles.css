@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 
+
+
 .appbar{
     display: flex !important;
     justify-content:space-around !important
@@ -340,12 +342,112 @@ a {
     object-fit: cover;
 
 }
-
-.card-itinerary {
-    /* border-radius: 1px 1px 1px 4px black !important; */
-    border-radius: 30px !important
+.dobleitinerario{
+    width: 70%;
 
 }
+.card-itinerary {
+    /* border-radius: 1px 1px 1px 4px black !important; */
+    box-shadow: 0 0 10px 3px rgba(230, 216, 235, 0.964) !important;
+    border-radius: 30px !important;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.usercomment{
+    display: flex;
+    
+   
+ 
+    
+}
+.avatar{
+    width:5rem !important;
+}
+.nameImageUser{
+    display: flex;
+
+
+
+}
+
+
+
+.avatarComments{
+    width: 3rem !important;
+    margin-top: .4rem;
+    margin-left: 1rem;
+   
+  
+}
+.name{
+    margin-bottom: 1rem !important;
+    font-family: Zen Loop,cursive;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+    margin-left: 1rem;
+    margin-top: .8rem;
+    text-transform: uppercase;
+}
+.textComment{
+  margin-right: 20rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+
+
+ 
+}
+.textCommentAdd{
+    
+    padding-top: 1.5rem;
+   padding-bottom: 1rem;
+    width: 39.6rem;
+    font-size: 2rem;
+
+  
+    
+}
+
+.autorimagen{
+    display: flex;
+    align-items: center;
+   
+   
+}
+.css-46bh2p-MuiCardContent-root{
+    display: flex ;
+    justify-content: center;
+  
+}
+.actImage{
+    height: 15rem;
+    width: 21rem !important;
+    border-radius: 35px;
+  
+ 
+}
+.actsName{
+    background-color: 
+ #c287a0;
+   ;
+    border-radius: 10px;
+    color: #fff;
+    font-family: Zen Loop,cursive;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 2px 20px;
+    text-transform: uppercase;
+    width: 13rem;
+    margin-left: 4rem;
+}
+
+
 /* fondo "create account del sign up" */
 
 
@@ -392,28 +494,165 @@ element.style {
     justify-content: center;
     margin: 2rem !important;
 }
+.allComments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image:  url(../images/fondohero.jpg);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    object-fit: cover !important;
+    margin: 10px 30px 15px 30px;
+    border-radius: 20PX;
+
+    
+}
+.activitiesTitle{
+    margin-left: 27rem;
+    font-size: 1.5rem;
+    background-color: #ffe3e2;
+    border-radius: 10px;
+    width:15rem;
+    color: rgb(186, 142, 142);
+    font-family: Zen Loop,cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 2px 20px;
+    text-transform: uppercase;
+}
+.titlecoments{
+    font-size: 1.5rem;
+    background-color: #ffe3e2;
+    border-radius: 10px;
+    width:15rem;
+    color: rgb(186, 142, 142);
+    font-family: Zen Loop,cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 2px 20px;
+    text-transform: uppercase;
+
+    /* margin-left: 27.5rem; */
+  
+   
+    
+}
+
+.inputandbutton{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 65rem;
+    
+}
+.inputComment{
+    
+    margin-left: 17rem !important;
+    background-color:  #c29cbf !important;
+    width: 30rem ;
+    font-size: 2.2rem !important;
+    border-radius: 10px;
+    border: 2px solid #925fa8;
+    font-family: "Montserrat",sans-serif;
+  
+}
+.inputComment2{
+    background-color: #e5c6f2 !important;
+    width: 50rem ;
+    height: 4rem;
+    border-radius: 50px;
+    border: 2px solid #e1bef0;
+    font-family: "Montserrat",sans-serif;
+  
+}
+.input-height{
+    height: 3rem !important;
+    display: flex;
+    
+}
+
+.commentsbutton{
+    display: flex;
+    flex-direction: column;
+    
+}
 
 .modify{
-    background-color: plum;
+    background-color: rgb(145, 131, 145);
+    border-radius: 20px;
+    margin-left: 1rem;
 }
+
+.material-symbols-outlined {
+    border-radius: 10px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 .delete{
-    background-color: red;
+    background-color: rgb(209, 106, 106);
+    border-radius: 100px;
+    margin-left: 1rem;
 }
+
+.material-symbols-outlined {
+    border-radius: 10px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
 .add{
-    background-color: #38b6ff;
+    margin-left: .5rem;
+    border-radius: 15px ;
+    background-color: #a0cce5;
 }
+.material-symbols-outlined { 
 
-
-
-
- .activities{
+    color: #1c1b1b;
+    
+    padding: 10px;  
+    border-radius: 15px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
    
- width: 10rem !important;
- height: 8rem !important;
-  
+  }
 
-} 
-.css-46bh2p-MuiCardContent-root:last-child{
+
+
+
+.css-46bh2p-MuiCardContent-root{
     display: flex;
 }
+/* @media(max-widt:1875px) {
+    .allComments{
+      
+        display: flex;
 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 50px 20px 50px;
+        border-radius: 20PX;
+        
+        
+    }
+  
+} */

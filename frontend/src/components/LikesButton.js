@@ -6,6 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Typography from '@mui/material/Typography';
 import itinerariesActions from '../redux/actions/itinerariesActions'
+import toast from 'react-hot-toast';
 // import '../style/style.css'
 
 
@@ -22,15 +23,22 @@ function LikesButton({props}) {
         dispatch(itinerariesActions.getOneItinerary(props._id))
         .then(response => setLikes(response.itinerary.likes))
         // eslint-disable-next-line
-    }, [!reload])
-    console.log(likes)
+          
+    }, [!reload]) //COPIO Y PEGO Y HAGO ESTO Y EL SETLIKES SERIA SET COMMENT
+    console.log(likes) //aca me funcionaba y creo q es lo mismo //lees ahi? donde meto el console.log para verlo
 
     async function likesOrDislikes() {
-        await dispatch(itinerariesActions.likeDislike(props._id))
+   const res =   await dispatch(itinerariesActions.likeDislike(props._id))
         setReload(!reload)
+        console.log(res)
+                
+       
+   
     }
 
-    return (
+
+     console.log(likes)
+    return (  
         <>
             {userState ?
                 <IconButton onClick={likesOrDislikes} aria-label="add to favorites">

@@ -52,37 +52,38 @@ export default function Itinerary({ data }) {
     <>
 
      
-          <div>
-            <Card className="card-itinerary" sx={{ width: 500, m:11 }} >
+          <div className='dobleitinerario'>
+            <Card className="card-itinerary" sx={{ width:'80%', m:11 }} >
               <h1 className='textItinerary'> {data.nombreitinerario}</h1>
               <CardHeader
 
                 avatar={
-                  <Avatar className='avatar' src={data.autorimagen} />
+                  <div className='autorimagen' > 
+                  <Avatar className='avatar'  sx={{height:'5rem'}} src={data.autorimagen}  />
+                  <div className='h5'> {data.autoritinerario}</div>
+                
+                  </div>
+                 
                 }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
+               
 
-
-                  </IconButton>
-                }
-
-                title={data.autoritinerario}
+                
 
               />
 
               <CardContent>
+               
                 <div variant="body2" color="text.secondary" className='formatoItinerary'>
-                  <p className='h5'>{data.precio}</p>
-                  <p className='h5'>{data.duracion}</p>
-                  <p className='h5'>{data.etiquetas}</p>
+                  <p className='h51'>Price: {data.precio}</p>
+                  <p className='h51'>duration: 🕒{data.duracion}</p>
+                  <p className='h51'>{data.etiquetas}</p>
                 </div>
+               
               </CardContent>
               <CardActions disableSpacing>
                <LikesButton  props={data}/> 
               
-                <Comments  props={data} /> 
+              
 
                 <ExpandMore
                   expand={expanded}
@@ -94,22 +95,24 @@ export default function Itinerary({ data }) {
                 </ExpandMore>
               </CardActions>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <div className="activitiesTitle" >Activities</div>
                 <CardContent >
+                
                   {data.activities.map((act) => {
                     return ( 
                     <div key={act._id} >
-                      <div>
-                        <CardMedia className='activities' component="img"
+                      <div className='activities'>
+                        <CardMedia  component="img" className='actImage'
                         image={act.imageActivity} alt="activity" />
-                        <div>
-                          <h4>{act.nameActivity}</h4>
-                        </div>
+                      
+                          <h4 className='actsName'>{act.nameActivity}</h4>
+                       
                       </div>
                       </div> 
                       )
                   })}
                  
-
+             
               {/* <div >
                   <img className='activity' src={itinerary.autorimagen}
                 />
@@ -121,6 +124,7 @@ export default function Itinerary({ data }) {
                  
 
                 </CardContent>
+                <Comments  props={data} /> 
               </Collapse>
             </Card>
           </div>

@@ -14,7 +14,7 @@ import citiesActions from "./redux/actions/citiesActions"
 import SignUp from './components/Singup.js';
 import SnackBar from './components/Alert';
 import userActions from './redux/actions/usersActions';
-
+import { Toaster } from 'react-hot-toast'
 
 
 
@@ -48,9 +48,21 @@ const user = useSelector(store => store.userReducers.user)
     useEffect(() => {
         dispatch(citiesActions.getCities())
       }, [])
-    return (
+    return (   
+    <div className="App">
+        <Toaster
+        toastOptions={{
+          className: '',
+          style: {
+            boxShadow: "0px 3px 10px rgba(8, 8, 8, 0.413)",
+            padding: '1rem',
+            color: 'black',
+            textAlign: "center",
+            fontSize: "14px",
+          },
+        }} />
 
-        <div className="App">
+     
          
            <NavBar/>
             <Routes>

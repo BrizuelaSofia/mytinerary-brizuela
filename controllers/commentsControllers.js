@@ -10,7 +10,7 @@ const commentsControllers = {
         const {itinerary, comment} = req.body.comment
         const user = req.user._id
         try {
-            const newComment = await Itinerary.findOneAndUpdate({_id: itinerary}, {$push: {comments: {comment: comment, userId: user}}}, {new: true}).populate("comments.userId", {firstName:1,imageUser:1})
+            const newComment = await Itinerary.findOneAndUpdate({_id: itinerary}, {$push: {comments: {comment: comment, userId: user}}}, {new: true}).populate("comments.userId")
 
 
             res.json({success: true,
