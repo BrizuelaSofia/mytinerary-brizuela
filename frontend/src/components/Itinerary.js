@@ -124,7 +124,7 @@ export default function Itinerary({ data }) {
                  
 
                 </CardContent>
-                <Comments  props={data} /> 
+                <Comments  props={data} />         
               </Collapse>
             </Card>
           </div>

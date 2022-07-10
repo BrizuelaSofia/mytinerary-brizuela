@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import Typography from '@mui/material/Typography';
 import itinerariesActions from '../redux/actions/itinerariesActions'
-import toast from 'react-hot-toast';
+
 // import '../style/style.css'
 
 
@@ -43,17 +43,18 @@ function LikesButton({props}) {
             {userState ?
                 <IconButton onClick={likesOrDislikes} aria-label="add to favorites">
                 {likes?.includes(userState.id) ?
-                    <FavoriteIcon/>
+                    <FavoriteIcon sx={{color:'red'}} />
                     :
-                    <FavoriteBorderIcon/>}
+                    <FavoriteBorderIcon sx={{borderColor:'1px solid red'}}/>}
                     <Typography>{likes?.length} likes</Typography>
                 </IconButton>
                 :
                  <IconButton aria-label="add to favorites">
                      <FavoriteBorderIcon/>
-                 <Typography>{likes?.length} likes</Typography> 
+                 <Typography>Please, login to leave a like</Typography> 
                  </IconButton>
             }
+
         </>
     )
 }

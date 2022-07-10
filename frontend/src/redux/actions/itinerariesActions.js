@@ -34,7 +34,7 @@ likeDislike:(id) => {
             {headers:{Authorization: "Bearer " +token
                      }
             })  
-           
+            
             
             console.log(res)
 

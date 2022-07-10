@@ -391,11 +391,14 @@ a {
     margin-left: 1rem;
     margin-top: .8rem;
     text-transform: uppercase;
+    color: white !important;
 }
 .textComment{
-  margin-right: 20rem;
+ 
   padding-top: 1rem;
-  padding-left: 2rem;
+  
+  width: 100%;
+  color: white;
 
 
  
@@ -499,12 +502,12 @@ element.style {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image:  url(../images/fondohero.jpg);
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    object-fit: cover !important;
-    margin: 10px 30px 15px 30px;
+    background-image: url(../images/fondobase.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat ;
+    background-position: center center ;
+    object-fit: cover ;
+    margin: 10px 30px 0px 30px;
     border-radius: 20PX;
 
     
@@ -574,8 +577,13 @@ element.style {
   
 }
 .input-height{
-    height: 3rem !important;
+    height: 4rem !important;
     display: flex;
+    border-radius: 30px;
+    
+    width: 100%;
+    text-overflow: clip;
+    
     
 }
 
@@ -635,11 +643,12 @@ element.style {
    
   }
 
-
+  
 
 
 .css-46bh2p-MuiCardContent-root{
     display: flex;
+    justify-content: center;
 }
 /* @media(max-widt:1875px) {
     .allComments{
@@ -656,3 +665,453 @@ element.style {
     }
   
 } */
+@media (max-width:400px) {
+    .dobleitinerario {
+        width: 32rem !important;
+        display: flex !important
+        ;
+    }
+    
+
+.textItinerary {
+    background-color: #c287a0;
+    border-radius: 50px;
+    color: #fff;
+    font-family: Zen Loop,cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 2px 20px;
+    text-transform: uppercase;
+    width: 18rem !important;
+}
+.h5 {
+  
+    font-family: Zen Loop,cursive;
+    font-size: 1.5rem !important;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+ 
+    text-transform: uppercase;
+}
+    .formatoItinerary {
+       
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-right: 23rem;
+        text-align: start;
+
+    }
+    .activitiesTitle{
+        margin-left: 27rem !important;
+        
+    }
+    
+    .css-46bh2p-MuiCardContent-root{
+     
+        margin-left: 23rem !important;
+        
+      
+    }
+   
+  
+    .actImage{
+        height: 15rem;
+
+        border-radius: 35px;
+      
+     
+    }
+    .actsName{
+        background-color: 
+     #c287a0;
+       ;
+        border-radius: 10px;
+        color: #fff;
+        font-family: Zen Loop,cursive;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 2px 20px;
+        text-transform: uppercase;
+     
+        margin-left: 4rem;
+    }
+    .allComments{
+      
+        display: flex  !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 20PX !important;
+        
+        
+    }
+    .input-height {
+        height: 2rem !important;
+        display: flex !important;
+        border-radius: 30px !important;
+        word-break: break-word !important;
+        width: 100%;
+        text-overflow: clip !important;
+    }
+    .inputComment{
+    
+        margin-left: 25rem !important;
+        background-color:  #c29cbf !important;
+        width: 15rem ;
+        font-size: 2.2rem !important;
+        border-radius: 10px;
+        border: 2px solid #925fa8;
+        font-family: "Montserrat",sans-serif;
+      
+    }
+    .inputComment2 {
+       
+        background-color:#e1bef0;
+        width: 20rem;
+        height: 3.8rem;
+        border-radius: 50px;
+        border: 2px solid #e1bef0;
+        font-family: "Montserrat",sans-serif;
+        text-overflow: clip !important;
+}
+ /*ajuste de el texto dentro de comentario*/
+.textComment {
+    margin-right: 0 !important; 
+     padding-top: 0 !important;
+    padding-left: 2rem !important;
+    width: 15rem !important;
+   
+   
+}
+/*ajuste de edit y trash width
+ margin: se mueve el input imagen nombre y botones*/
+.nameImageUser {
+    
+    width: 23.9rem;
+    margin-left: 17.2rem;
+} /*ajuste de tamaño name user*/
+.name {
+    
+    margin-bottom: 1rem !important;
+    font-family: Zen Loop,cursive;
+    font-size: .1rem !important;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+}
+/* ajusta imagen la mueve a la izquierda para q entre */
+.avatarComments {
+    width: 3rem !important;
+    margin-top: .4rem;
+    margin-left: 3rem;
+   
+  
+}
+
+}
+@media (max-width:700px) {
+    .dobleitinerario {
+        width: 38rem ;
+        display: flex ;
+    }
+    .formatoItinerary {
+       
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-right: 23rem;
+        text-align: start;
+
+    }
+    .activitiesTitle{
+        margin-left: 28rem;
+        font-size: 1.5rem;
+        background-color: #ffe3e2;
+        border-radius: 10px;
+        width:15rem;
+        color: rgb(186, 142, 142);
+        font-family: Zen Loop,cursive;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 2px 20px;
+        text-transform: uppercase;
+    }
+    
+    .css-46bh2p-MuiCardContent-root{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 23.5rem;
+        
+      
+    }
+   
+  
+    .actImage{
+        height: 15rem;
+
+        border-radius: 35px;
+      
+     
+    }
+    .actsName{
+        background-color: 
+     #c287a0;
+       ;
+        border-radius: 10px;
+        color: #fff;
+        font-family: Zen Loop,cursive;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 2px 20px;
+        text-transform: uppercase;
+     
+        margin-left: 4rem;
+    }
+    .allComments{
+      
+        display: flex  !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 20PX !important;
+        
+        
+    }
+    .input-height {
+        height: 2rem !important;
+        display: flex !important;
+        border-radius: 30px !important;
+        word-break: break-word !important;
+        width: 100%;
+        text-overflow: clip !important;
+    }
+    .inputComment{
+    
+        margin-left: 25rem !important;
+        background-color:  #c29cbf !important;
+        width: 15rem ;
+        font-size: 2.2rem !important;
+        border-radius: 10px;
+        border: 2px solid #925fa8;
+        font-family: "Montserrat",sans-serif;
+      
+    }
+    .inputComment2 {
+       
+        background-color:#e1bef0;
+        width: 22rem !important;
+        height: 3.8rem;
+        border-radius: 50px;
+        border: 2px solid #e1bef0;
+        font-family: "Montserrat",sans-serif;
+        text-overflow: clip !important;
+}
+ /*ajuste de el texto dentro de comentario*/
+.textComment {
+    margin-right: 0 !important; 
+     padding-top: 0 !important;
+    padding-left: 2rem !important;
+    width: 15rem !important;
+   
+   
+}
+/*ajuste de edit y trash width
+ margin: se mueve el input imagen nombre y botones*/
+.nameImageUser {
+    
+    width: 28.5rem !important;
+    margin-left: 16rem !important;
+   
+} /*ajuste de tamaño name user*/
+.name {
+    
+    margin-bottom: 1rem !important;
+    font-family: Zen Loop,cursive;
+    font-size: .1rem !important;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+}
+/* ajusta imagen la mueve a la izquierda para q entre */
+.avatarComments {
+    width: 3rem !important;
+    margin-top: .4rem;
+    margin-left: 2.5rem;
+   
+  
+}
+
+}
+/* @media (max-width:750px) {
+    .dobleitinerario {
+        width: 46rem !important;
+        display: flex;
+    }
+} */
+/* @media (max-width:680px) {
+    .dobleitinerario {
+        width: 44rem !important;
+        display: flex !important;
+    }
+} */
+
+@media (max-width:800px) {
+    .dobleitinerario {
+        width: 49rem;
+        display: flex;
+    }
+    .formatoItinerary {
+       
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-right: 23rem;
+        text-align: start;
+
+    }
+    .activitiesTitle{
+        margin-left: 28rem;
+        font-size: 1.5rem;
+        background-color: #ffe3e2;
+        border-radius: 10px;
+        width:15rem;
+        color: rgb(186, 142, 142);
+        font-family: Zen Loop,cursive;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 2px 20px;
+        text-transform: uppercase;
+    }
+    
+    .css-46bh2p-MuiCardContent-root{
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 23.5rem;
+        
+      
+    }
+   
+  
+    .actImage{
+        height: 15rem;
+
+        border-radius: 35px;
+      
+     
+    }
+    .actsName{
+        background-color: 
+     #c287a0;
+       ;
+        border-radius: 10px;
+        color: #fff;
+        font-family: Zen Loop,cursive;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 2px 20px;
+        text-transform: uppercase;
+     
+        margin-left: 4rem;
+    }
+    .allComments{
+      
+        display: flex  ;
+        flex-direction: column ;
+        align-items: center ;
+        justify-content: center ;
+        border-radius: 20PX ;
+        
+        
+    }
+    .input-height {
+        height: 2rem !important;
+        display: flex !important;
+        border-radius: 30px !important;
+        word-break: break-word !important;
+        width: 100%;
+        
+    }
+    .inputComment{
+    
+        margin-left: 20rem !important;
+        background-color:  #c29cbf !important;
+        width: 24.5rem ;
+        font-size: 2.2rem !important;
+        border-radius: 10px;
+        border: 2px solid #925fa8;
+        font-family: "Montserrat",sans-serif;
+      
+    }
+    .inputComment2 {
+       
+        background-color:#e1bef0;
+        width: 30rem;
+        height: 3.8rem;
+        border-radius: 50px;
+        border: 2px solid #e1bef0;
+        font-family: "Montserrat",sans-serif;
+        text-overflow: clip !important;
+}
+ /*ajuste de el texto dentro de comentario*/
+.textComment {
+    margin-right: 0 !important; 
+     padding-top: 0 !important;
+    padding-left: 2rem !important;
+    width: 24rem !important;
+   
+   
+}
+/*ajuste de edit y trash width
+ margin: se mueve el input imagen nombre y botones*/
+.nameImageUser {
+    
+    width: 30rem;
+    margin-left: 16rem;
+} /*ajuste de tamaño name user*/
+.name {
+    
+    margin-bottom: 1rem !important;
+    font-family: Zen Loop,cursive;
+    font-size: .1rem !important;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+}
+/* ajusta imagen la mueve a la izquierda para q entre */
+.avatarComments {
+    width: 3.8rem !important;
+    height: 3.8rem !important;
+    margin-top: .4rem;
+    margin-left: .5rem;
+   
+  
+}
+
+}

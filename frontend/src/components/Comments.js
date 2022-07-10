@@ -11,129 +11,132 @@ import Box from "@mui/material/Box";
 
 
 function Comments({ props }) {
-    console.log(props)
-   
-   
-   
-    const dispatch = useDispatch()
-    // const [delete, setDelete] = useState("");
-    const [comments, setComments] = useState();
-    const [text, setText] = useState("");//captura lo q se graba en el input
-    const [modify, setModify] = useState(""); //captura la modificacion.
-    const [reload, setReload] = useState(false);
-    //tengo q tomar el estado o la props del data? hiciste con useState? entonces es mi prop
-    //no creo q funcione igual jajsjaja pq sigo teniendo cosas de antes ese useSelector, el dispatch q comente q traia el itinerario
-   
-   
-    const user = useSelector(store => store.userReducers.user)
-    console.log(user)
-   
-    useEffect(() => {
-      dispatch(itinerariesActions.getOneItinerary(props._id))
-        .then(response => setComments(response.itinerary.comments)) // 
-      // eslint-disable-next-line
-    }, [reload])
-    console.log(comments)
-   
-    async function toAdd() {
-      const comment = {
-        itinerary: props._id,
-        comment: text
-      }//del body obtenemos comment, el texto
-   
-   
-   
-   
-      const res = await dispatch(commentsActions.addComment(comment))
-      setText("")
-      setReload(!reload)
-   
-   
-      document.querySelector("#NewComment").textContent = ""
-      console.log(res)
+  console.log(props)
+
+
+
+  const dispatch = useDispatch()
+  // const [delete, setDelete] = useState("");
+  const [comments, setComments] = useState();
+  const [text, setText] = useState("");//captura lo q se graba en el input
+  const [modify, setModify] = useState(""); //captura la modificacion.
+  const [reload, setReload] = useState(false);
+  //tengo q tomar el estado o la props del data? hiciste con useState? entonces es mi prop
+  //no creo q funcione igual jajsjaja pq sigo teniendo cosas de antes ese useSelector, el dispatch q comente q traia el itinerario
+
+
+  const user = useSelector(store => store.userReducers.user)
+  console.log(user)
+
+  useEffect(() => {
+    dispatch(itinerariesActions.getOneItinerary(props._id))
+      .then(response => setComments(response.itinerary.comments)) // 
+    // eslint-disable-next-line
+  }, [reload])
+  console.log(comments)
+
+  async function toAdd() {
+    const comment = {
+      itinerary: props._id,
+      comment: text
+    }//del body obtenemos comment, el texto
+
+
+
+
+    const res = await dispatch(commentsActions.addComment(comment))
+    setText("")
+    setReload(!reload)
+
+
+    document.querySelector("#NewComment").textContent = ""
+    console.log(res)
+  }
+
+  async function modifyComment(comment) {
+    const commentData = {
+      comment: modify
+
     }
-   
-    async function modifyComment(comment) {
-      const commentData = {
-        comment: modify
-   
-      }
-      const commentId = comment._id
-      //del body obtenemos comment, el texto
-      const res = await dispatch(commentsActions.modifyComment(commentId, commentData))
-      setReload(!reload)
-      setModify(res.itinerary)
-    }
-    async function deleteComment(id) {
-   
-      //quedaria asi?
-      await dispatch(commentsActions.deleteComment(id))
-      setReload(!reload)
-    }
-   
-    return (
-      <>
-        <div className='allComments'>
-          <div className='titlecoments' style={{ marginBottom: "1rem" }}>Comments</div>
-          {comments?.map((comment) => (
-            <div key={comment._id}>
-              <div className='inputandbutton'>
-                <div className='nameImageUser'>
-                  <div className='usercomment'>
-                    <Avatar className='avatarComments' sx={{ height: '3rem' }} src={comment?.userId?.imageUser} />
-                    <div className='name'>{comment?.userId?.firstName}</div>
-                  </div>
-                  <div className='inputComment2'>
-                    <div contentEditable suppressContentEditableWarning={true} onInput={(event) => setModify(event.currentTarget.textContent)} className='input-height' type="text-area">
-                      <div className='textComment'>{comment.comment}</div>
-                    </div>
+    const commentId = comment._id
+    //del body obtenemos comment, el texto
+    const res = await dispatch(commentsActions.modifyComment(commentId, commentData))
+    setReload(!reload)
+    setModify(res.itinerary)
+  }
+  async function deleteComment(id) {
+
+    //quedaria asi?
+    await dispatch(commentsActions.deleteComment(id))
+    setReload(!reload)
+  }
+
+  return (
+    <>
+      <div className='allComments'>
+        <div className='titlecoments' style={{ marginBottom: "1rem" }}>Comments</div>
+        {comments?.map((comment) => (
+          <div key={comment._id}>
+     
+            <div className='inputandbutton'>
+              <div className='nameImageUser'>
+                <div className='usercomment'>
+                  <Avatar className='avatarComments' sx={{ height: '3rem' }} src={comment?.userId?.imageUser} />
+                  <div className='name'>{comment?.userId?.firstName}</div>
+                </div>
+
+                <div className='inputComment2'>
+                  
+                  <div contentEditable suppressContentEditableWarning={true} onInput={(event) => setModify(event.currentTarget.textContent)} className='input-height' type="text-area">
+                    <div className='textComment'>{comment.comment}</div>
                   </div>
                 </div>
-   
-   
-                {/* <div key={index} contentEditable suppressContentEditableWarning={true} onInput={(event) => setDelete(event.currentTarget.textContent)}   type="text-area">{ comment.comment} </div> */}
-   
-                {comment.userId?._id === user?.id ? (
-                  <div className='commentsbutton'>
-                    <button className='modify' onClick={() => modifyComment(comment)}><span className="material-symbols-outlined">edit_document</span></button>
-                    <button className='delete' onClick={() => deleteComment(comment._id)}><span className="material-symbols-outlined">delete</span></button>
-                  </div>) : null}
               </div>
+
+
+              {/* <div key={index} contentEditable suppressContentEditableWarning={true} onInput={(event) => setDelete(event.currentTarget.textContent)}   type="text-area">{ comment.comment} </div> */}
+
+              {comment.userId?._id === user?.id ? (
+                <div className='commentsbutton'>
+                  <button className='modify' onClick={() => modifyComment(comment)}><span className="material-symbols-outlined">edit_document</span></button>
+                  <button className='delete' onClick={() => deleteComment(comment._id)}><span className="material-symbols-outlined">delete</span></button>
+                </div>) : null}
             </div>
-          ))}
-   
-          {user ?
-            <div className='inputandbutton'>
-              <div className='inputComment'>
-                <div className='textCommentA' id='NewComment' contentEditable suppressContentEditableWarning={true} value={text} onInput={(event) => setText(event.currentTarget.textContent)} type="text-area"> </div>
-   
-              </div>
-              <div>
-                <button className='add' onClick={toAdd}>
-                  <span className="material-symbols-outlined">send</span>
-                </button>
-              </div>
+          </div>
+        ))}
+
+        {user ?
+          <div className='inputandbutton'>
+            <div className='inputComment'>
+              <div className='textComment' id='NewComment' contentEditable suppressContentEditableWarning={true} value={text} onInput={(event) => setText(event.currentTarget.textContent)} type="text-area"> </div>
+
             </div>
-            :
-            <Box>
-              <Paper sx={{
-                my: 2,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                bgcolor: '#2a9d9026',
-                height: 40
-              }}>
-   
-                <Typography sx={{ fontWeight: "bold" }}>Please, login to leave a comment</Typography>
-              </Paper>
-            </Box>
-          }
-        </div>
-      </>
-    )
-  }
-  export default Comments
+            <div>
+              <button className='add' onClick={toAdd}>
+                <span className="material-symbols-outlined">send</span>
+              </button>
+            </div>
+          </div>
+          :
+          <Box>
+            <Paper sx={{
+              my: 2,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              bgcolor: '#2a9d9026',
+              height: 40
+            }}>
+
+              <Typography sx={{ fontWeight: "bold", color:'white' }}>Please, login to leave a comment</Typography>
+            </Paper>
+          </Box>
+        }
+      </div>
+    </>
+  )
+}
+export default Comments
         //  {itinerary?.comments.map(comment =>
         //     <>
         //       {comment.userID?._id !== props.user?.id ?

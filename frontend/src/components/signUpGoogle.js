@@ -30,7 +30,7 @@ export default function GoogleSignUp({selectCountry}) {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: '1059973922697-0uh38ohsrmt5ru5jouqksmvsq3m0akb0.apps.googleusercontent.com',
+            client_id: '305494709717-46bf4uf1902hv4ake8hi9adgs14reb0d.apps.googleusercontent.com',
              
             callback: handleCallbackResponse
         });
