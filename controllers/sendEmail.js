@@ -48,7 +48,7 @@ const sendEmail = async (email, string) => {
         if (error) {
             console.log(error)
         } else {
-            console.log(`check ${email} to confirm your account`)
+            console.log(`check ${email} to confirm your account`) 
         }
     })
 }
