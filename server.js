@@ -19,7 +19,7 @@ app.use(express.json()) //ejecuto express para pasar todo a json.
 app.use('/api', Router) //la app/server usa las rutas y como intermediario añade a cada endpoint => 
 ///api ahi tenendriamos la url de la api
 
-const PORT = 4000
+const PORT = process.env.PORT || 4000; 
 
 
 app.set('port', PORT)
