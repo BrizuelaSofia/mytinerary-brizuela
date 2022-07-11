@@ -189,7 +189,7 @@ const userControllers = {
         if(user){
             user.verificatrion = true
             await user.save()
-            res.redirect("http://localhost:3000/")
+            res.redirect("https://front-brizuela.herokuapp.com/")
         }
         else{res.json({
             success: false,

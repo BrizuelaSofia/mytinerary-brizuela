@@ -39,7 +39,7 @@ const sendEmail = async (email, string) => {
         to: email,
         subject: 'verify account',
         html: 
-        ` <a href=http://localhost:4000/api/verify/${string}>CLICK!</a>
+        ` <a href=https://back-mytinerary-sofi.herokuapp.com/api/verify/${string}>CLICK!</a>
             <h3>to confirm!</h3>`
     }
  console.log(mailOptions)
