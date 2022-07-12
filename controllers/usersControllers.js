@@ -31,7 +31,7 @@ const userControllers = {
         //es decir:
         //la contraseña[0] es del from[0]
         //la contraseña[2] es del from[2]
-        //la contraseña[indice] es del from[indice]
+        //la contraseña[indice] es del from[indice] 
         try {
             const newUser = await User.findOne({email}) //buscamos por mail
             const verification = false //por default
@@ -43,7 +43,7 @@ const userControllers = {
                     uniqueString: uniqueString,
                     password: [hashWord],
                     from: [from]})
-                if (from === "signUpForm") { //si la data viene del formulario
+                if (from === "signUpForm") { //si la data viene del formulario sisi
                     //ACLARACION: ahora el if/else tienen la misma data
                     //pero van a cambiar cuando enviemos correo de verificacion
                     
@@ -61,7 +61,7 @@ const userControllers = {
                     res.json({
                         success: true, 
                         from: from,
-                        message: `you SIGNED UP by ${from}! now LOG IN!`})
+                        message: `you SIGNED UP by ${from}! now LOG IN!`}) //funcionaba bien, nono no proobe igual con este back levantado pero andaba hoy
                 }
             } else { //si existe el usuario, significa que al menos tiene un registro
                 //hay que chequear si coincide la forma de RE-REGISTRO con la ya REGISTRADA
@@ -99,7 +99,7 @@ const userControllers = {
                 success: false,
                 from: from,
                 message: 'ERROR',
-            console: console.log(error)})
+            console: console.log(error)}) 
         }
     },
 
@@ -187,7 +187,7 @@ const userControllers = {
         const user = await User.findOne({uniqueString: string})
         //console.log(user)
         if(user){
-            user.verificatrion = true
+            user.verification = true
             await user.save()
             res.redirect("https://front-brizuela.herokuapp.com/")
         }
