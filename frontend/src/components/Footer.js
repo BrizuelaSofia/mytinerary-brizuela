@@ -2,14 +2,11 @@ import React from "react";
 import "../styles/styles.css";
 import logo from "../images/logo.png";
 import { Link as LinkRouter } from "react-router-dom";
-
-
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -21,11 +18,10 @@ const pages = [
 ];
 
 const Footer = () => {
- //nombre del estado  en la constante  entre [] va el valor del estado inicial.
-  
 
-  const handleCloseNavMenu = () => {    //en esta funcion creamos nuestros metodos, en este caso componente funcional le digo q me devuelva mi estado con su valor    setAnchorElNav(null);
-  };
+  
+ const handleCloseNavMenu = () => {    //en esta funcion creamos nuestros metodos, en este caso el componente funcional devuelve mi estado con su valor    setAnchorElNav(null);
+ };
 
   return (
     <AppBar position="static" className="footericons"sx={{ backgroundColor: "#c287a0" }}>

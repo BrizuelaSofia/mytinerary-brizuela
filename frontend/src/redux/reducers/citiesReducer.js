@@ -6,7 +6,8 @@ const initialState = {
 };
 
 const citiesReducers = (state = initialState, action) => {
-  switch (action.type) { //condicion en cada caso
+  //condicion en cada caso
+  switch (action.type) { 
     case "GETCITIES":
       return {
         ...state,
@@ -33,4 +34,4 @@ const citiesReducers = (state = initialState, action) => {
 }
 export default citiesReducers;
 
-//payload escucha el evento, en este caso va a traer todo, abrimos cities y queremos q traigan todas las cities.
+//payload= carga.

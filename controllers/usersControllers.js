@@ -1,29 +1,17 @@
-// const User = require("../models/users")
-// const bcryptjs = require("bcryptjs")
-
 const User = require('../models/users')
 const bcryptjs = require('bcryptjs')
 const crypto = require('crypto')
 const sendEmail = require('../controllers/sendEmail')
-//const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
-// firstName:{type:String, require:true},
-// lastname:{type:String, require:true},
-// email:{type:String, require},
-// password:[{type:String, require:true}],
-// country: {type:String, require:true},  
-// imageUser: {type:String},
-// from: {type:Array}
 
 
 const userControllers = {
 
 
-    signUp: async (req,res) => {
-        //console.log('REQ BODY SING UP USER')
-        //console.log(req.body)
-        const {firstName, lastName, imageUser, email,  country, password, from} = req.body.data
-        console.log(req.body.data)
+    signUp: async (req, res) => {
+
+        const { firstName, lastName, imageUser, email, country, password, from } = req.body.data
+        //console.log(req.body.data)
 
         //ACLARACION: password y from son ARRAYS
         //cada elemento de password se relaciona con un unico elemento de from
@@ -33,35 +21,39 @@ const userControllers = {
         //la contraseña[2] es del from[2]
         //la contraseña[indice] es del from[indice] 
         try {
-            const newUser = await User.findOne({email}) //buscamos por mail
+            const newUser = await User.findOne({ email }) //buscamos por mail
             const verification = false //por default
-            const uniqueString = crypto.randomBytes(15).toString('hex') //utilizo losmetodos cripto
+            const uniqueString = crypto.randomBytes(15).toString('hex') //utilizo los metodos cripto
             if (!newUser) { //si NO existe el usuario
                 const hashWord = bcryptjs.hashSync(password, 10) //hasheo la contraseña
-                const myNewUser = await new User({firstName, lastName, imageUser, email, country, 
-                    verification:verification,
+                const myNewUser = await new User({
+                    firstName, lastName, imageUser, email, country,
+                    verification: verification,
                     uniqueString: uniqueString,
                     password: [hashWord],
-                    from: [from]})
+                    from: [from]
+                })
                 if (from === "signUpForm") { //si la data viene del formulario sisi
                     //ACLARACION: ahora el if/else tienen la misma data
                     //pero van a cambiar cuando enviemos correo de verificacion
-                    
+
                     await myNewUser.save()
-                     await sendEmail(email, uniqueString)
-                     console.log(myNewUser)
-                  
+                    await sendEmail(email, uniqueString)
+                    console.log(myNewUser)
+
                     res.json({
-                        success: true, 
+                        success: true,
                         from: from,
-                        message: `check ${email} and finish your SIGN UP!`}) 
-                    } else { //si la data viene de una red social
+                        message: `check ${email} and finish your SIGN UP!`
+                    })
+                } else { //si la data viene de una red social
                     myNewUser.verification = true,
-                    await myNewUser.save()
+                        await myNewUser.save()
                     res.json({
-                        success: true, 
+                        success: true,
                         from: from,
-                        message: `you SIGNED UP by ${from}! now LOG IN!`}) //funcionaba bien, nono no proobe igual con este back levantado pero andaba hoy
+                        message: `you SIGNED UP by ${from}! now LOG IN!`
+                    })
                 }
             } else { //si existe el usuario, significa que al menos tiene un registro
                 //hay que chequear si coincide la forma de RE-REGISTRO con la ya REGISTRADA
@@ -76,8 +68,9 @@ const userControllers = {
                     res.json({ //devolvemos la respuesta
                         success: false,
                         from: from,
-                        message: `${email} has been registered, please LOG IN!`})
-                //si no coincide, se tiene que cumplir esta otra:                
+                        message: `${email} has been registered, please LOG IN!`
+                    })
+                    //si no coincide, se tiene que cumplir esta otra:                
                 } else {
                     //si es -1 significa que el usuario NO SE REGISTRO DE ESTA FORMA (nuevo registro con google)
                     //pero ya tiene AL MENOS UN registro (facebook y form)
@@ -88,9 +81,10 @@ const userControllers = {
                     newUser.verification = true
                     await newUser.save()
                     res.json({
-                        success: true, 
-                        from: from, 
-                        message: `check ${email} to confirm your SIGN UP!`}) 
+                        success: true,
+                        from: from,
+                        message: `check ${email} to confirm your SIGN UP!`
+                    })
                 }
             }
         } catch (error) {
@@ -99,119 +93,134 @@ const userControllers = {
                 success: false,
                 from: from,
                 message: 'ERROR',
-            console: console.log(error)}) 
+                console: console.log(error)
+            })
         }
     },
 
     signIn: async (req, res) => {
-        //console.log('REQ BODY SIGN IN USER')
-        //console.log(req.body)
-        const {email, password, from, imageUser} = req.body.data
+        const { email, password, from, imageUser } = req.body.data
         try {
-            const loginUser = await User.findOne({email}) //buscamos por email
+            const loginUser = await User.findOne({ email }) //buscamos por email
             if (!loginUser) { //si NO existe el usuario
                 res.json({
                     success: false,
                     from: 'no from',
-                    message: `${email} has no account, please SIGN UP!`})
+                    message: `${email} has no account, please SIGN UP!`
+                })
             } else { //si existe el usuario
-                let checkedWord =  loginUser.password.filter(pass => bcryptjs.compareSync(password, pass))
+                let checkedWord = loginUser.password.filter(pass => bcryptjs.compareSync(password, pass))
                 //console.log(checkedWord)
                 //filtramos en el array de contraseñas hasheadas si coincide la contraseña 
                 if (from === "signUpForm") { //si fue registrado por nuestro formulario                
-                    if (checkedWord.length>0) { //si hay coincidencias
-            
-                            const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
-                                id:loginUser._id,
-                                firstName: loginUser.firstName,
-                                lastName: loginUser.lastName,
-                                email: loginUser.email,
-                                imageUser:loginUser.imageUser,
-                                country: loginUser.country,
-                                from:loginUser.from}
-                                console.log(userData)
-                                
-                                const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })      
-                            await loginUser.save()
-                                                                                 
-                            res.json({
-                                response: {token, userData}, 
-                                success: true, 
-                                from: from, 
-                                message: `welcome back ${userData.firstName}!`})
-                        
-                       
-                    } else { //si no hay coincidencias
-                        res.json({
-                            success: false, 
-                            from: from,   
-                            message: `verify your mail or password!`})
-                    }
-                } else { //si fue registrado por redes sociales
-                    //ACLARACION: por ahora es igual al anterior
-                    if (checkedWord.length>0) { //si hay coincidencias
-                        const userData = { //este objeto lo utilizaremos cuando veamos TOKEN
-                            id:loginUser._id,
+                    if (checkedWord.length > 0) { //si hay coincidencias
+
+                        const userData = {
+                            id: loginUser._id,
                             firstName: loginUser.firstName,
                             lastName: loginUser.lastName,
                             email: loginUser.email,
-                            imageUser:loginUser.imageUser,
+                            imageUser: loginUser.imageUser,
                             country: loginUser.country,
-                            from:loginUser.from}
-                        const token= jwt.sign({...userData}, process.env.SECRET_KEY, {expiresIn:60*60*24 })   
+                            from: loginUser.from
+                        }
+                        console.log(userData)
+
+                        const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
                         await loginUser.save()
-                         
+
                         res.json({
-                            response: {token, userData}, 
-                            success: true, 
-                            from: from, 
-                            message: `welcome back ${userData.firstName}!`})
+                            response: { token, userData },
+                            success: true,
+                            from: from,
+                            message: `welcome back ${userData.firstName}!`
+                        })
+
+
                     } else { //si no hay coincidencias
                         res.json({
-                            success: false, 
-                            from: from,  
-                            message: `verify your mail or password!`})
+                            success: false,
+                            from: from,
+                            message: `verify your mail or password!`
+                        })
+                    }
+                } else { //si fue registrado por redes sociales
+                    if (checkedWord.length > 0) { //si hay coincidencias
+                        const userData = {
+                            id: loginUser._id,
+                            firstName: loginUser.firstName,
+                            lastName: loginUser.lastName,
+                            email: loginUser.email,
+                            imageUser: loginUser.imageUser,
+                            country: loginUser.country,
+                            from: loginUser.from
+                        }
+                        const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+                        await loginUser.save()
+
+                        res.json({
+                            response: { token, userData },
+                            success: true,
+                            from: from,
+                            message: `welcome back ${userData.firstName}!`
+                        })
+                    } else {
+                        res.json({
+                            success: false,
+                            from: from,
+                            message: `verify your mail or password!`
+                        })
                     }
                 }
             }
         } catch (error) {
-            console.log(error)
+            //console.log(error)
             res.json({
                 success: false,
                 from: from,
-                message: 'ERROR'})
+                message: 'ERROR'
+            })
         }
     },
-    verifyMail: async(req, res) => {
-        const {string} = req.params
-        const user = await User.findOne({uniqueString: string})
+    verifyMail: async (req, res) => {
+        const { string } = req.params
+        const user = await User.findOne({ uniqueString: string })
         //console.log(user)
-        if(user){
+        if (user) {
             user.verification = true
             await user.save()
             res.redirect("https://front-brizuela.herokuapp.com/")
         }
-        else{res.json({
-            success: false,
-            message:`email hast not been confirmed yet!`
-        })}
+        else {
+            res.json({
+                success: false,
+                message: `email hast not been confirmed yet!`
+            })
+        }
     },
-    verifyToken:(req, res) => {
-        if(req.user){
-           res.json({success:true,
-            response: {id:req.user.id, 
-                       firstName:req.user.firstName,
-                       email:req.user.email, 
-                       imageUser:req.user.imageUser,
-                       from:"token"}, 
-            message:"Welcome again!"})
-            
-        }else{
-            
-            res.json({success:false,
-            
-            message:"Please, register again!"})}
-},
+    verifyToken: (req, res) => {
+        if (req.user) {
+            res.json({
+                success: true,
+                response: {
+                    id: req.user.id,
+                    firstName: req.user.firstName,
+                    email: req.user.email,
+                    imageUser: req.user.imageUser,
+                    from: "token"
+                },
+                message: "Welcome again!"
+            })
+
+        } else {
+
+            res.json({
+                success: false,
+
+                message: "Please, register again!"
+            })
+        }
+    },
 
 }
 
@@ -219,84 +228,3 @@ module.exports = userControllers
 
 
 
-// const usersControllers = {
-//     signUpUsers: async(req, res) => {
-//         const {firstName, lastName, email, password, from, imageUser, country } = req.body.userData
-//         const test = req.body.test
-//         try{
-//             const loginUser = await User.findOne({ email })
-//             if(loginUser){
-//                 if(loginUser.from.indexOf(from) !== -1){
-//                     res.json({
-//                         success: false,
-//                         from: from,
-//                         message:"Ya has realizado tu signUp de esta forma,  por favor realiza el SignIn"
-//                     })
-//                 }else{
-//                     const passwordHasheada = bcryptjs.hashSync(password, 10)
-//                     loginUser.from.push(from)
-//                     loginUser.password.push(passwordHasheada)
-//                     await newUser.save()
-//                     res.json({
-//                         success: true,
-//                         from: from,
-//                         message: "Agregamos" + from + "a tus medios para realizar SignIn"
-//                     })
-//                 }
-//             }else{
-//                 const passwordHasheada = bcryptjs.hashSync(password, 10)
-//                 const nerUser = await new User({
-//                     firstName: firstName,
-//                     lastName: lastName,
-//                     email: email,
-//                     imageUser: imageUser,
-//                     password: [passwordHasheada],
-//                     verifiedEmail: false,
-//                     country:country,
-//                     from: [from]
-//                 })
-//                 if(from !== "form-signup") {
-//                     await newUser.save()
-//                     res.json({
-//                         success: true,
-//                         from: from,
-//                         message:"te enviamos un email para validarlo, por favor verifica tu casilla"
-//                     })
-//                 }
-//             }
-//         } catch(error){
-//             res.json({
-//                 console: console.log(error),
-//                 success: false,
-//                 message:"algo salio mal, intentelo enunos minutos"
-//             })
-//         }
-//     },
-
-//  loginUser: async (req,res) =>{
-//     const {email, password, from} = req.body.logedUser
-//     try{
-//         const loginUser = await User.findOne({ email })
-//         if(!loginUser){
-//             res.json({
-//                 success: false,
-//                 message:"you user has not been registered, please try again"
-//             })
-//         }else{
-//             if(from !== "form-signup"){
-//                 let passwordMatch =loginUser.password.filter(pass => bcryptjs.compareSync(password, pass))
-//             }if(passwordMatch.length > 0){
-//                 const userData = {
-//                     id:loginUser._id,
-//                     firstName: loginUser.firstName,
-//                     lastName: loginUser.lastName,
-//                     email: loginUser.email,
-//                     imageUser: loginUser.imageUser,
-//                     country: loginUser.country,
-//                     from:from
-//                 }
-//             }
-//         }
-//     }
-//  }
-// }

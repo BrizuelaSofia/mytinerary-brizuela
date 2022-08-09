@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-//actiom: fucioeformadeojeto.
+//action: fucion en forma de objeto.
 const itinerariesActions = {
   
     readItineraries: (id) => {
@@ -44,20 +44,6 @@ likeDislike:(id) => {
         }
     }
 },
-// likeDislike: (itineraryId) => {
-//     const token = localStorage.getItem('token')
-//     return async() => {
-//         try {
-//             const answer = await axios.put(http://localhost:4000/api/itineraries/likeDislike/${itineraryId},{},
-//                 {headers: {Authorization: "Bearer "+token}}
-//             )
-//             //console.log(answer.data.response)
-//             return answer.data.response
-//         }catch (err) {
-//             console.log(err)
-//         }
-//     }
-// },
 }
 
 export default itinerariesActions

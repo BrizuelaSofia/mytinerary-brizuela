@@ -13,27 +13,22 @@
    border-radius: 10px;
    padding-top: 1rem;
    padding-bottom:1rem;
-  
-
-   
-
-
-   
-   
+     
 }
+
+
 .textocarrousel{
     font-family: 'Nothing You Could Do', cursive;
     margin-bottom:1rem;
     
 
 }
+
+
 .imagenCiudades{
     height: 300px;
     border-radius:30px;
-    
     object-fit: cover;
     
    
-    
-
 }

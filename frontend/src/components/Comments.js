@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux"
 import itinerariesActions from '../redux/actions/itinerariesActions'
 import commentsActions from '../redux/actions/commentsActions'
 import Typography from "@mui/material/Typography";
-
 import Paper from "@mui/material/Paper"
 import Box from "@mui/material/Box";
 
@@ -14,16 +13,13 @@ function Comments({ props }) {
   console.log(props)
 
 
-
   const dispatch = useDispatch()
   // const [delete, setDelete] = useState("");
   const [comments, setComments] = useState();
   const [text, setText] = useState("");//captura lo q se graba en el input
   const [modify, setModify] = useState(""); //captura la modificacion.
   const [reload, setReload] = useState(false);
-  //tengo q tomar el estado o la props del data? hiciste con useState? entonces es mi prop
-  //no creo q funcione igual jajsjaja pq sigo teniendo cosas de antes ese useSelector, el dispatch q comente q traia el itinerario
-
+ 
 
   const user = useSelector(store => store.userReducers.user)
   console.log(user)
@@ -39,7 +35,7 @@ function Comments({ props }) {
     const comment = {
       itinerary: props._id,
       comment: text
-    }//del body obtenemos comment, el texto
+    }//del body obtenemos comment
 
 
 
@@ -59,14 +55,13 @@ function Comments({ props }) {
 
     }
     const commentId = comment._id
-    //del body obtenemos comment, el texto
     const res = await dispatch(commentsActions.modifyComment(commentId, commentData))
     setReload(!reload)
     setModify(res.itinerary)
   }
   async function deleteComment(id) {
 
-    //quedaria asi?
+    
     await dispatch(commentsActions.deleteComment(id))
     setReload(!reload)
   }
@@ -92,9 +87,6 @@ function Comments({ props }) {
                   </div>
                 </div>
               </div>
-
-
-              {/* <div key={index} contentEditable suppressContentEditableWarning={true} onInput={(event) => setDelete(event.currentTarget.textContent)}   type="text-area">{ comment.comment} </div> */}
 
               {comment.userId?._id === user?.id ? (
                 <div className='commentsbutton'>
@@ -137,29 +129,4 @@ function Comments({ props }) {
   )
 }
 export default Comments
-        //  {itinerary?.comments.map(comment =>
-        //     <>
-        //       {comment.userID?._id !== props.user?.id ?
-        //         <div className="card cardComments " key={comment._id}>
-        //           <div className="card-header cardHeader">
-        //             <p>{comment.userID.fullName}</p> <p>{new Date(comment.date).toUTCString()}</p>
-        //           </div>
-        //           <div className="card-body">
-        //             <p className="card-text cardText">{comment.comment}</p>
-        //           </div>
-        //         </div> :
-
-        //         <div className="card cardComments">
-        //           <div className="card-header cardHeader">
-        //             <p>{comment.userID.fullName}</p> <p>{new Date(comment.date).toUTCString()}</p>
-        //           </div>
-        //           <div className="card-body ">
-
-        //             <div type="text" className="card-text textComments" onInput={(event) => setModifi(event.currentTarget.textContent)} contentEditable >{comment.comment}</div>
-        //             <button id={comment._id} onClick={modificarComentario} className="btn btn-primary btnComments">Modificar</button>
-        //             <button id={comment._id} onClick={eliminarComentario} className="btn btn-primary btnComments">Eliminar</button>
-        //           </div>
-        //         </div>
-        //       }
-        //     </>
-        //   )}
+       

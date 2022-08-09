@@ -1,7 +1,4 @@
 const mongoose = require('mongoose')
-//MONGOOSE
-//libreria que permite una conexion entre la app y la base de datos escribir 
-//consultas  de mongoDB
 const userSchema = new mongoose.Schema({
      firstName:{type:String },
      lastname:{type:String},

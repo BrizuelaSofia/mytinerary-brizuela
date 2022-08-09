@@ -1,15 +1,15 @@
 import "../styles/styles.css";
 import { useState, useEffect} from "react";
-import Respuesta from "../components/Respuesta";
-import CardCiudades from "../components/CardCiudades";
+import Answer from "../components/Answer";
+import CardCities from "../components/CardCities";
 import {useDispatch, useSelector} from "react-redux"
 import citiesActions from "../redux/actions/citiesActions"
-//darle la misma clase.
-//pexels 
+import Answer from "../components/Answer";
 
 
 
-function Cities(props) {
+
+function Cities() {
   const [inputValue, setInputValue] = useState("");
   const dispatch= useDispatch()
 
@@ -18,7 +18,7 @@ function Cities(props) {
     // eslint-disable-next-line
   },[inputValue])
 
-  const filtroCiudades = useSelector(store => store.citiesReducers.filter)
+  const filterCities = useSelector(store => store.citiesReducers.filter)
  
   return (                                                                                                                                                                
     <div className="fondociudades altura" >
@@ -26,12 +26,10 @@ function Cities(props) {
         <input onKeyUp={(evento) => {setInputValue(evento.target.value);}}type="text" name="text" className="input" placeholder="Search by city!"  />
       </div>
 
-     <div className="tarjetas"> {filtroCiudades?.length > 0 ? (<CardCiudades filtrado={filtroCiudades} />) : (<Respuesta /> ) } </div> 
+     <div className="tarjetas"> {filtroCiudades?.length > 0 ? (<CardCities filter={filterCities} />) : (<Answer /> ) } </div> 
     </div>
   );
 }
-
-  //auxiliar:state.citiesReducers.auxiliar
 
 
 export default Cities

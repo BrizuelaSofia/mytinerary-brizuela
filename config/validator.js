@@ -10,7 +10,7 @@ const validator = (req, res, next) => {
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-           .required()
+            .required()
             .messages({
                 'string.min': 'name: min 3 characters',
                 'string.max': 'name: max 20 characters'
@@ -24,16 +24,16 @@ const validator = (req, res, next) => {
             .messages({
                 'string.min': '"last name": min 3 characters',
                 'string.max': '"last name": max 20 characters'
-            }),  
+            }),
         email: joi.string()
             .email({ minDomainSegments: 2 })
             .required(),
-            
-       imageUser: joi.string()
-           .trim()
-           .required(),
-         
-      
+
+        imageUser: joi.string()
+            .trim()
+            .required(),
+
+
         password: joi.string()
             .min(8)
             .max(30)
@@ -45,10 +45,10 @@ const validator = (req, res, next) => {
                 'string.max': '"password": max 30 characters'
             }),
         country: joi.string(),
-            // .required(),
-        
+        // .required(),
+
         from: joi.string()
-            
+
     })
 
     const validation = schema.validate(req.body.data, { abortEarly: false })

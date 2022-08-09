@@ -37,9 +37,9 @@ const commentsActions = {
         }
 
     },
-    modifyComment: (id, comment) => { //el parametro tiene q ser id aca en modifi tmb asi? a okis
+    modifyComment: (id, comment) => { 
 
-        const token = localStorage.getItem('token') //si por eso HABRE TOCADO ALGO EN RUTES 
+        const token = localStorage.getItem('token') 
         return async (dispatch, getState) => {
             const res = await axios.put(`http://localhost:4000/api//itineraries/comment/${id}` , { comment }, {
                 headers: {

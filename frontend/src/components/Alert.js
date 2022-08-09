@@ -1,9 +1,7 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 import Snackbar from '@mui/material/Snackbar'
-// import IconButton from '@mui/material/IconButton'
-// import CloseIcon from '@mui/icons-material/Close'
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Stack from '@mui/material/Stack';
 import MuiAlert from '@mui/material/Alert';
@@ -18,7 +16,7 @@ function SnackBar() {
         horizontal: 'center',
     });
 
-    const { vertical, horizontal} = state;
+    const { vertical, horizontal } = state;
 
 
     const dispatch = useDispatch()
@@ -26,35 +24,35 @@ function SnackBar() {
     console.log(snack)
 
     const handleClose = () => {
-            dispatch({
+        dispatch({
             type: 'MESSAGE',
-            payload: {view: false, message: '', success: false}
+            payload: { view: false, message: '', success: false }
         })
     }
     const messagge = (
         <Box>
             {(typeof snack.message) === "string" ?
-            (<p>{snack.message}</p>) :
-            <div>{snack.message.map((message,index) =><p key={index}>{message.message}</p>)}</div>
+                (<p>{snack.message}</p>) :
+                <div>{snack.message.map((message, index) => <p key={index}>{message.message}</p>)}</div>
 
             }
         </Box>
     )
     return (
         <>
-        <Stack spacing={2} sx={{ width: '100%'}}>
-            <Snackbar
-            anchorOrigin={{ vertical, horizontal }}
-            open={snack.view}
-            autoHideDuration={3000}
-            onClose={handleClose}
-            message={
-                <Alert onClick={handleClose} severity="info" sx={{ width: '100%' }}>
-                    {messagge}
-                </Alert>
-            }
-            />
-        </Stack>
+            <Stack spacing={2} sx={{ width: '100%' }}>
+                <Snackbar
+                    anchorOrigin={{ vertical, horizontal }}
+                    open={snack.view}
+                    autoHideDuration={3000}
+                    onClose={handleClose}
+                    message={
+                        <Alert onClick={handleClose} severity="info" sx={{ width: '100%' }}>
+                            {messagge}
+                        </Alert>
+                    }
+                />
+            </Stack>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/styles.css'
 
-function Respuesta(){
+function Answer(){
     return(
         <div>
             <h1>No cities found. </h1>
@@ -10,4 +10,4 @@ function Respuesta(){
     )
 }
 
-export default Respuesta
+export default Answer
